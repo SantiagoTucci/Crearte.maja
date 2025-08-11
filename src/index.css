@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores rosa más suaves y elegantes */
+  --color-blush-50: #fef7f7;
+  --color-blush-100: #feeaea;
+  --color-blush-200: #fdd5d5;
+  --color-blush-300: #fab5b5;
+  --color-blush-400: #f58a8a;
+  --color-blush-500: #ec6565;
+  --color-blush-600: #d84545;
+  --color-blush-700: #b63636;
+  --color-blush-800: #962d2d;
+  --color-blush-900: #7c2929;
+
+  /* Rosa polvoso más suave */
+  --color-dusty-rose-50: #fdf2f4;
+  --color-dusty-rose-100: #fce7eb;
+  --color-dusty-rose-200: #f9d0d9;
+  --color-dusty-rose-300: #f4a6ba;
+  --color-dusty-rose-400: #ed7396;
+  --color-dusty-rose-500: #e24975;
+  --color-dusty-rose-600: #cd2d5a;
+  --color-dusty-rose-700: #ab1f4a;
+  --color-dusty-rose-800: #8f1d42;
+  --color-dusty-rose-900: #7a1b3d;
+
+  /* Variables del sistema de diseño con colores más suaves */
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222.2 84% 4.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222.2 84% 4.9%;
+  --color-primary: 340 65% 75%;
+  --color-primary-foreground: 210 40% 98%;
+  --color-secondary: 340 30% 96%;
+  --color-secondary-foreground: 222.2 84% 4.9%;
+  --color-muted: 340 20% 96%;
+  --color-muted-foreground: 215.4 16.3% 46.9%;
+  --color-accent: 340 25% 94%;
+  --color-accent-foreground: 222.2 84% 4.9%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 210 40% 98%;
+  --color-border: 340 15% 92%;
+  --color-input: 340 15% 92%;
+  --color-ring: 340 65% 75%;
+  --radius: 1rem;
+
+  /* Colores para gráficos más suaves */
+  --color-chart-1: 340 65% 75%;
+  --color-chart-2: 350 55% 70%;
+  --color-chart-3: 330 60% 80%;
+  --color-chart-4: 345 70% 72%;
+  --color-chart-5: 335 58% 78%;
+}
+
+@theme dark {
+  --color-background: 222.2 84% 4.9%;
+  --color-foreground: 210 40% 98%;
+  --color-card: 222.2 84% 4.9%;
+  --color-card-foreground: 210 40% 98%;
+  --color-popover: 222.2 84% 4.9%;
+  --color-popover-foreground: 210 40% 98%;
+  --color-primary: 340 75% 80%;
+  --color-primary-foreground: 222.2 84% 4.9%;
+  --color-secondary: 340 25% 15%;
+  --color-secondary-foreground: 210 40% 98%;
+  --color-muted: 340 25% 15%;
+  --color-muted-foreground: 215 20.2% 65.1%;
+  --color-accent: 340 25% 15%;
+  --color-accent-foreground: 210 40% 98%;
+  --color-destructive: 0 62.8% 30.6%;
+  --color-destructive-foreground: 210 40% 98%;
+  --color-border: 340 25% 15%;
+  --color-input: 340 25% 15%;
+  --color-ring: 340 75% 85%;
+  --color-chart-1: 340 70% 60%;
+  --color-chart-2: 350 60% 55%;
+  --color-chart-3: 330 65% 65%;
+  --color-chart-4: 345 75% 62%;
+  --color-chart-5: 335 68% 68%;
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-25px) rotate(5deg);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(236, 101, 101, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(236, 101, 101, 0.6);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #ec6565, #ed7396, #e24975);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
