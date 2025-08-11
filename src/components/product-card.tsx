@@ -39,14 +39,14 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-w-sm">
       <div className="relative overflow-hidden">
         <img
-        src={product.image || "/placeholder.svg"}
-        alt={product.name}
-        width={60}
-        height={60}
-        className="rounded-md object-cover"
+          src={product.image || "/placeholder.svg"}
+          alt={product.name}
+          width={350}
+          height={180} // menos alto que antes (antes 250)
+          className="rounded-md object-cover max-h-[180px] w-full"
         />
 
         {/* Overlay con acciones */}
@@ -63,19 +63,20 @@ export function ProductCard({ product }: ProductCardProps) {
         </Badge>
       </div>
 
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-lg mb-2 line-clamp-1">{product.name}</h3>
-        <p className="text-muted-foreground text-sm mb-3 line-clamp-2">{product.description}</p>
+      <CardContent className="p-1">
+        <h3 className="font-semibold text-md mb-1 line-clamp-1">{product.name}</h3> {/* menos margen y texto más pequeño */}
+        <p className="text-muted-foreground text-xs mb-2 line-clamp-2">{product.description}</p> {/* texto más pequeño y menos margen */}
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-rose-600">${product.price.toLocaleString()}</span>
+          <span className="text-xl font-bold text-rose-600">${product.price.toLocaleString()}</span>
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-1 pt-1">
         <Button
           className="w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600"
           onClick={handleAddToCart}
           disabled={isLoading}
+          size="sm" // agrega tamaño sm al botón para hacerlo más compacto
         >
           {isLoading ? (
             <div className="flex items-center">
