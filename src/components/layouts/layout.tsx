@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 import "@fontsource/inter/variable.css";
 import "../../index.css"; 
 
@@ -6,20 +6,20 @@ import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Crearte.Maja",
-  description: "",
-}
+  description: "Landing page de Crearte.Maja, tienda de productos artísticos y creativos.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body>
+      <body className="bg-white text-foreground">
         {children}
         <Toaster position="top-right" />
       </body>
     </html>
-  )
+  );
 }

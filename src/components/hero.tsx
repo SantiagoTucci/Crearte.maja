@@ -24,7 +24,7 @@ export function Hero({ products }: HeroProps) {
         }`}
       >
         <h1 className="text-3xl md:text-5xl font-bold mb-3 gradient-text leading-tight">Conoce nuestros productos</h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed font-light">
+        <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed font-light text-black">
           Ilumina tu hogar con la calidez de nuestras velas artesanales.
         </p>
       </div>

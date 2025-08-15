@@ -24,22 +24,12 @@ const config: Config = {
           200: "#c7ceff",
           300: "#a4aaff",
           400: "#7f7fff",
-          500: "#5f5fff",  // color base
+          500: "#5f5fff",
           600: "#4b4bcc",
           700: "#383899",
           800: "#272766",
           900: "#1a1a44",
           950: "#0d0d22",
-        },
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
         },
         secondary: {
           50:  "#f8f8fa",
@@ -54,18 +44,20 @@ const config: Config = {
           900: "#1a1a23",
           950: "#0e0e15",
         },
-        muted: {
-          DEFAULT: "#a8a8b3",
-          foreground: "#595969",
-        },
+        muted: "#a8a8b3",
+        mutedForeground: "#595969",
         border: "#d0d0df",
         input: "#e0e0f0",
         ring: "#7f7fff",  // mismo que primary 400
+        background: "#ffffff",
+        foreground: "#000000",
+        card: "#ffffff",
+        popover: "#ffffff",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
       },
       keyframes: {
         "accordion-down": {
