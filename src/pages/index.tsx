@@ -9,6 +9,7 @@ import { CartProvider } from "@/hooks/cart-context"
 import { ThemeProvider } from "next-themes"
 import { Product } from "@/types/product"
 import { sampleProducts } from "@/data/sample-products"
+import { FeaturedCarousel } from "@/components/featured-carousel"
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
@@ -62,27 +63,17 @@ export default function Home() {
       <CartProvider>
         <div className="min-h-screen bg-background">
           <Header />
-          <Hero />
-          
-          <main className="container mx-auto px-4 py-12">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Nuestras Velas Artesanales</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Descubre nuestra colección de velas hechas a mano con ingredientes naturales 
-                y fragancias únicas que transformarán tu hogar en un oasis de tranquilidad.
-              </p>
+
+          <Hero products={products} />
+
+          <main className="container mx-auto px-4 py-12 sm:py-16">
+            <div className="mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center sm:mb-4 gradient-text">Nuestra Colección</h2>
             </div>
 
-            <FilterBar 
-              types={availableTypes}
-              selectedTypes={selectedTypes}
-              onTypeChange={setSelectedTypes}
-            />
-            
-            <ProductList 
-              products={filteredProducts} 
-              loading={loading}
-            />
+            <FilterBar types={availableTypes} selectedTypes={selectedTypes} onTypeChange={setSelectedTypes} />
+
+            <ProductList products={filteredProducts} loading={loading} />
           </main>
 
           <Cart onCheckout={() => setShowCheckout(true)} />

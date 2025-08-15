@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ShoppingCart, Heart, Flame } from "lucide-react"
+import { ShoppingCart, Heart } from "lucide-react"
 import type { Product } from "@/types/product"
 import { useCart } from "@/hooks/cart-context"
 import { toast } from "sonner"
@@ -18,10 +18,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   const handleAddToCart = async () => {
     setIsLoading(true)
-
-    // Simular delay para mejor UX
     await new Promise((resolve) => setTimeout(resolve, 300))
-
     addItem(product)
     toast.success(`${product.name} agregado al carrito`)
     setIsLoading(false)
@@ -29,64 +26,56 @@ export function ProductCard({ product }: ProductCardProps) {
 
   const getTypeColor = (type: string) => {
     const colors = {
-      aromática: "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300",
-      decorativa: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300",
-      personalizada: "bg-rose-200 text-rose-900 dark:bg-rose-800 dark:text-rose-200",
-      relajante: "bg-pink-200 text-pink-900 dark:bg-pink-800 dark:text-pink-200",
-      energizante: "bg-rose-300 text-rose-900 dark:bg-rose-700 dark:text-rose-100",
+      aromática: "bg-blush-100 text-blush-700 dark:bg-blush-900/30 dark:text-blush-300",
+      decorativa: "bg-dusty-rose-100 text-dusty-rose-700 dark:bg-dusty-rose-900/30 dark:text-dusty-rose-300",
+      personalizada: "bg-blush-200 text-blush-800 dark:bg-blush-800/30 dark:text-blush-200",
+      relajante: "bg-dusty-rose-200 text-dusty-rose-800 dark:bg-dusty-rose-800/30 dark:text-dusty-rose-200",
+      energizante: "bg-blush-300 text-blush-900 dark:bg-blush-700/30 dark:text-blush-100",
     }
-    return colors[type as keyof typeof colors] || "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300"
+    return colors[type as keyof typeof colors] || "bg-blush-100 text-blush-700 dark:bg-blush-900/30 dark:text-blush-300"
   }
 
   return (
-     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-w-sm">
-      <div className="relative overflow-hidden">
+    <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white/80 dark:bg-gray-200/30 backdrop-blur-sm border-0 shadow-lg h-full flex flex-col">
+      <div className="relative overflow-hidden rounded-t-xl">
         <img
-          src={product.image || "/placeholder.svg"}
+          src={product.image || "/placeholder.svg?height=400&width=350&query=elegant candle"}
           alt={product.name}
-          width={350}
-          height={180} // menos alto que antes (antes 250)
-          className="rounded-md object-cover max-h-[180px] w-full"
+          className="w-full h-64 sm:h-72 md:h-80 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        {/* Overlay con acciones */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <Button variant="secondary" size="sm" className="mr-2" onClick={() => setIsFavorite(!isFavorite)}>
-            <Heart className={`h-4 w-4 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
-          </Button>
-        </div>
-
-        {/* Badge de tipo */}
-        <Badge className={`absolute top-2 left-2 ${getTypeColor(product.type)}`}>
-          <Flame className="h-3 w-3 mr-1" />
+        <Badge
+          className={`absolute top-3 left-3 ${getTypeColor(product.type)} rounded-full px-3 py-1 text-xs font-medium shadow-lg backdrop-blur-sm`}
+        >
           {product.type}
         </Badge>
       </div>
 
-      <CardContent className="p-1">
-        <h3 className="font-semibold text-md mb-1 line-clamp-1">{product.name}</h3> {/* menos margen y texto más pequeño */}
-        <p className="text-muted-foreground text-xs mb-2 line-clamp-2">{product.description}</p> {/* texto más pequeño y menos margen */}
-        <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-rose-600">${product.price.toLocaleString()}</span>
+      <CardContent className="px-4 py-2 flex-grow">
+        <h3 className="font-semibold text-lg sm:text-xl mb-3 line-clamp-2 text-foreground leading-tight">
+          {product.name}
+        </h3>
+        <p className="text-muted-foreground text-sm mb-4 line-clamp-3 leading-relaxed">{product.description}</p>
+        <div className="flex items-center justify-between mt-auto">
+          <span className="text-2xl sm:text-3xl font-bold gradient-text">${product.price.toLocaleString()}</span>
         </div>
       </CardContent>
 
-      <CardFooter className="p-1 pt-1">
+      <CardFooter className="pt-0 px-4 pb-1">
         <Button
-          className="w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600"
+          className="w-full bg-gradient-to-r from-blush-400 to-dusty-rose-400 hover:from-blush-500 hover:to-dusty-rose-500 text-white cursor-pointer font-medium py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-500 border-0 text-sm sm:text-base touch-manipulation"
           onClick={handleAddToCart}
           disabled={isLoading}
-          size="sm" // agrega tamaño sm al botón para hacerlo más compacto
         >
           {isLoading ? (
-            <div className="flex items-center">
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-              Agregando...
+            <div className="flex items-center justify-center">
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              <span>Agregando...</span>
             </div>
           ) : (
             <>
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Agregar al Carrito
+              <ShoppingCart className="h-5 w-5 mr-2" />
+              <span>Agregar</span>
             </>
           )}
         </Button>
