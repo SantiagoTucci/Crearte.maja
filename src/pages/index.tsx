@@ -10,6 +10,7 @@ import { ThemeProvider } from "next-themes"
 import { Product } from "@/types/product"
 import { sampleProducts } from "@/data/sample-products"
 import { FeaturedCarousel } from "@/components/featured-carousel"
+import React from "react"
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
@@ -18,7 +19,6 @@ export default function Home() {
   const [showCheckout, setShowCheckout] = useState(false)
   const [loading, setLoading] = useState(true)
 
-  // Simular carga de productos (aquí integrarías SheetJS)
   useEffect(() => {
     const loadProducts = async () => {
       // Simular delay de carga
@@ -47,21 +47,18 @@ export default function Home() {
 
   if (showCheckout) {
     return (
-      <ThemeProvider>
         <CartProvider>
-          <div className="min-h-screen bg-background">
+          <div className="min-h-screen">
             <Header />
             <CheckoutForm onBack={() => setShowCheckout(false)} />
           </div>
         </CartProvider>
-      </ThemeProvider>
     )
   }
 
   return (
-    <ThemeProvider>
       <CartProvider>
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen">
           <Header />
 
           <Hero products={products} />
@@ -79,6 +76,5 @@ export default function Home() {
           <Cart onCheckout={() => setShowCheckout(true)} />
         </div>
       </CartProvider>
-    </ThemeProvider>
   )
 }

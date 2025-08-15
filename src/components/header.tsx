@@ -11,7 +11,7 @@ export function Header() {
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
 
    return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
           <h1 className="text-xl font-bold italic gradient-text">Crearte.Maja</h1>

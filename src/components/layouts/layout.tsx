@@ -5,8 +5,8 @@ import "../../index.css";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Lumina Artesanal - Velas Artesanales",
-  description: "Descubre nuestra colección de velas artesanales hechas con amor y ingredientes naturales",
+  title: "Crearte.Maja",
+  description: "",
 }
 
 export default function RootLayout({
