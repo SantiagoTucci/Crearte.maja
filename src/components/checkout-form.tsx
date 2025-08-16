@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { ArrowLeft, Mail, User, MapPin, CheckCircle } from "lucide-react"
+import { ArrowLeft, Mail, User, MapPin, CheckCircle, Phone } from "lucide-react"
 import { useCart } from "@/hooks/cart-context"
 import { toast } from "sonner"
 import emailjs from "@emailjs/browser"
@@ -19,6 +19,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     address: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -29,7 +30,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!formData.name || !formData.email || !formData.address) {
+    if (!formData.name || !formData.email || !formData.address || !formData.phone) {
       toast.error("Por favor completa todos los campos")
       return
     }
@@ -37,16 +38,15 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
     setIsSubmitting(true)
 
     try {
-      // Preparar datos para EmailJS
       const templateParams = {
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
         address: formData.address,
         items: items.map(i => `${i.name} x${i.quantity}`).join(", "),
         total: total.toFixed(2)
       }
 
-      // Enviar correo usando EmailJS
       await emailjs.send(
         "service_5h2z6ks",     
         "template_ol579jk",      
@@ -68,16 +68,16 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
   if (isSuccess) {
     return (
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 bg-white">
         <div className="max-w-2xl mx-auto text-center">
           <div className="mb-8">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h1 className="text-3xl font-bold mb-4">¡Gracias por tu pedido!</h1>
-            <p className="text-lg text-muted-foreground mb-6">
+            <h1 className="text-3xl font-bold mb-4 text-black">¡Gracias por tu pedido!</h1>
+            <p className="text-lg mb-6 text-black">
               Tu pedido ha sido recibido y será procesado pronto.
             </p>
-            <div className="bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800 rounded-lg p-6">
-              <p className="text-green-800 dark:text-green-200">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+              <p className="text-green-800">
                 <strong>Próximos pasos:</strong>
                 <br />
                 El seguimiento de tu pedido y la coordinación del pago se realizará por correo electrónico.
@@ -98,16 +98,16 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-white text-black">
       <div className="max-w-4xl mx-auto">
-        <Button variant="ghost" onClick={onBack} className="mb-6 cursor-pointer">
+        <Button variant="ghost" onClick={onBack} className="mb-6 cursor-pointer text-black">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Volver al Carrito
         </Button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Formulario */}
-          <Card className="pt-4.5 border border-gray-200 shadow-xl">
+          <Card className="pt-4.5 border border-gray-200 shadow-xl bg-white text-black">
             <CardHeader>
               <CardTitle>Información de Contacto</CardTitle>
             </CardHeader>
@@ -115,14 +115,14 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Nombre */}
                 <div>
-                  <Label htmlFor="name">Nombre Completo</Label>
+                  <Label htmlFor="name" className="text-black">Nombre Completo</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                     <Input
                       id="name"
                       type="text"
                       placeholder="Tu nombre completo"
-                      className="pl-10"
+                      className="pl-10 text-black"
                       value={formData.name}
                       onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                       required
@@ -132,14 +132,14 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Email */}
                 <div>
-                  <Label htmlFor="email">Correo Electrónico</Label>
+                  <Label htmlFor="email" className="text-black">Correo Electrónico</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                    <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                     <Input
                       id="email"
                       type="email"
                       placeholder="tu@email.com"
-                      className="pl-10"
+                      className="pl-10 text-black"
                       value={formData.email}
                       onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                       required
@@ -147,16 +147,33 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                   </div>
                 </div>
 
+                {/* Teléfono */}
+                <div>
+                  <Label htmlFor="phone" className="text-black">Número de Teléfono</Label>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="+34 600 123 456"
+                      className="pl-10 text-black"
+                      value={formData.phone}
+                      onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
+                      required
+                    />
+                  </div>
+                </div>
+
                 {/* Dirección */}
                 <div>
-                  <Label htmlFor="address">Dirección de Entrega</Label>
+                  <Label htmlFor="address" className="text-black">Dirección de Entrega</Label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                     <Input
                       id="address"
                       type="text"
                       placeholder="Calle, número, ciudad"
-                      className="pl-10"
+                      className="pl-10 text-black"
                       value={formData.address}
                       onChange={(e) => setFormData((prev) => ({ ...prev, address: e.target.value }))}
                       required
@@ -184,7 +201,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
           </Card>
 
           {/* Resumen */}
-          <Card className="pt-4.5 border border-gray-200 shadow-xl">
+          <Card className="pt-4.5 border border-gray-200 shadow-xl bg-white text-black">
             <CardHeader>
               <CardTitle>Resumen del Pedido</CardTitle>
             </CardHeader>
@@ -201,7 +218,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                     />
                     <div className="flex-1">
                       <h4 className="font-medium">{item.name}</h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-gray-600">
                         {item.quantity} x ${item.price.toLocaleString()}
                       </p>
                     </div>

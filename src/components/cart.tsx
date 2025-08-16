@@ -29,7 +29,7 @@ export function Cart({ onCheckout }: CartProps) {
 
   return (
     <Sheet open={isOpen} onOpenChange={toggleCart}>
-      <SheetContent className="w-full sm:max-w-xl md:max-w-2xl bg-white">
+      <SheetContent className="w-full sm:max-w-xl md:max-w-2xl bg-white text-black">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
             <ShoppingCart className="h-5 w-5" />
@@ -40,9 +40,9 @@ export function Cart({ onCheckout }: CartProps) {
 
         {items.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-3">
-            <ShoppingCart className="h-16 w-16 text-muted-foreground mb-4" />
+            <ShoppingCart className="h-16 w-16 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Tu carrito está vacío</h3>
-            <p className="text-muted-foreground mb-4">Agrega algunos productos para comenzar tu pedido</p>
+            <p className="mb-4">Agrega algunos productos para comenzar tu pedido</p>
             <Button onClick={toggleCart} variant="outline">
               Continuar Comprando
             </Button>
@@ -52,7 +52,7 @@ export function Cart({ onCheckout }: CartProps) {
             <ScrollArea className="flex-1 -mx-6 px-8">
               <div className="space-y-4 py-2">
                 {items.map((item) => (
-                  <div key={item.id} className="flex items-center space-x-1 p-3 border rounded-lg">
+                  <div key={item.id} className="flex items-center space-x-4 p-3 border rounded-lg">
                     <img
                       src={item.image || "/placeholder.svg"}
                       alt={item.name}
@@ -63,8 +63,8 @@ export function Cart({ onCheckout }: CartProps) {
 
                     <div className="flex-1 min-w-0">
                       <h4 className="font-medium truncate">{item.name}</h4>
-                      <p className="text-sm text-muted-foreground">{item.type}</p>
-                      <p className="font-semibold text-rose-600">${item.price.toLocaleString()}</p>
+                      <p className="text-sm">{item.type}</p>
+                      <p className="font-semibold">${item.price.toLocaleString()}</p>
                     </div>
 
                     <div className="flex items-center space-x-2">
@@ -105,7 +105,7 @@ export function Cart({ onCheckout }: CartProps) {
             <div className="border-t pt-4 space-y-4 px-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold text-rose-600">${total.toLocaleString()}</span>
+                <span className="text-2xl font-bold">${total.toLocaleString()}</span>
               </div>
 
               <Button

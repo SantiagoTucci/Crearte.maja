@@ -33,7 +33,7 @@ export function Header() {
           <Button variant="ghost" size="icon" className="relative" onClick={toggleCart}>
             <ShoppingCart className="h-5 w-5" />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-white text-xs flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full text-black text-xs flex items-center justify-center">
                 {totalItems}
               </span>
             )}

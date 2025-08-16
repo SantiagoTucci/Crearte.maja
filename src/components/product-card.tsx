@@ -52,10 +52,10 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       <CardContent className="px-4 py-2 flex-grow">
-        <h3 className="font-semibold text-lg sm:text-xl mb-3 line-clamp-2 text-foreground leading-tight">
+        <h3 className="font-semibold text-lg sm:text-xl mb-3 line-clamp-2 text-black leading-tight">
           {product.name}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-3 leading-relaxed">{product.description}</p>
+        <p className="text-gray-800 text-sm mb-4 line-clamp-3 leading-relaxed">{product.description}</p>
         <div className="flex items-center justify-between mt-auto">
           <span className="text-2xl sm:text-3xl font-bold gradient-text">${product.price.toLocaleString()}</span>
         </div>
