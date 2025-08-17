@@ -79,8 +79,8 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
 
                       {/* Contenido */}
                       <CardContent className="p-6 md:p-8 flex flex-col justify-center">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">{product.name}</h3>
-                        <p className="text-muted-foreground mb-6 leading-relaxed">{product.description}</p>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">{product.name}</h3>
+                        <p className="mb-6 leading-relaxed text-black">{product.description}</p>
                         <div className="flex items-center justify-between mb-6">
                           <span className="text-3xl md:text-4xl font-bold gradient-text">
                             ${product.price.toLocaleString()}

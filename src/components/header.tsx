@@ -17,7 +17,7 @@ export function Header() {
           <h1 className="text-xl font-bold italic gradient-text">Crearte.Maja</h1>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-6">
+        {/* <nav className="hidden md:flex items-center space-x-6">
           <a href="inicio" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Inicio
           </a>
@@ -27,7 +27,7 @@ export function Header() {
           <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Contacto
           </a>
-        </nav>
+        </nav> */}
 
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" className="relative" onClick={toggleCart}>
@@ -45,7 +45,7 @@ export function Header() {
         </div>
       </div>
 
-      {mobileMenuOpen && (
+      {/* {mobileMenuOpen && (
         <div className="md:hidden border-t bg-white text-black/95">
           <nav className="container mx-auto px-4 py-4 space-y-2">
             <a href="inicio" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
@@ -59,7 +59,7 @@ export function Header() {
             </a>
           </nav>
         </div>
-      )}
+      )} */}
     </header>
   );
 }
