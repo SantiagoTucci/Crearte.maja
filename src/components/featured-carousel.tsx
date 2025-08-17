@@ -70,17 +70,12 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
                           alt={product.name}
                           className="w-full h-64 md:h-80 object-cover"
                         />
-                        <Badge
-                          className={`absolute top-4 left-4 ${getTypeColor(product.type)} rounded-full px-3 py-1 font-medium shadow-lg`}
-                        >
-                          {product.type}
-                        </Badge>
                       </div>
 
                       {/* Contenido */}
                       <CardContent className="p-3 md:p-6 flex flex-col justify-center">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">{product.name}</h3>
-                        <p className="mb-6 leading-relaxed text-black">{product.description}</p>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-2 text-black">{product.name}</h3>
+                        <p className="mb-3 leading-relaxed text-black">{product.description}</p>
                         <div className="flex items-center justify-between mb-6">
                           <span className="text-3xl md:text-4xl font-bold gradient-text">
                             ${product.price.toLocaleString()}
@@ -108,7 +103,7 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
             <button
               key={index}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-blush-400 scale-110" : "bg-gray-100 hover:bg-blush-300"
+                index === currentIndex ? "bg-blush-400 scale-110" : "bg-gray-300 hover:bg-blush-300"
               }`}
               onClick={() => {
                 setCurrentIndex(index)
