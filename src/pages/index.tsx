@@ -8,7 +8,7 @@ import { Header } from "@/components/header"
 import { CartProvider } from "@/hooks/cart-context"
 import { ThemeProvider } from "next-themes"
 import { Product } from "@/types/product"
-import { sampleProducts } from "@/data/sample-products"
+import { sampleProducts } from "../../public/productos/productos"
 import { FeaturedCarousel } from "@/components/featured-carousel"
 import React from "react"
 

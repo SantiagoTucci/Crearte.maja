@@ -1,7 +1,6 @@
 import { Header } from "@/components/header";
 import { ThemeProvider } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { instagramPosts } from "@/data/instagram-posts";
 import { motion } from "framer-motion";
 
 export default function contact() {
