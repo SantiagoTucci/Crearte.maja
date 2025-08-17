@@ -11,11 +11,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "2",
-    name: "Vela Decorativa Geométrica",
-    description: "Elegante vela decorativa con formas geométricas modernas. Ideal para decoración contemporánea.",
-    price: 3200,
+    name: "Lapicero y ordenador",
+    description: "Un lapicero y ordenador para tu escritorio.",
+    price: 2000,
     type: "decorativa",
-    image: "/vela.jpg"
+    image: "/lapicero.jpeg"
   },
   {
     id: "3",
