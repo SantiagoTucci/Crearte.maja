@@ -78,7 +78,7 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
                       </div>
 
                       {/* Contenido */}
-                      <CardContent className="p-6 md:p-8 flex flex-col justify-center">
+                      <CardContent className="p-3 md:p-6 flex flex-col justify-center">
                         <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">{product.name}</h3>
                         <p className="mb-6 leading-relaxed text-black">{product.description}</p>
                         <div className="flex items-center justify-between mb-6">

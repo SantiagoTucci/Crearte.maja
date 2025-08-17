@@ -36,7 +36,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white/80 dark:bg-gray-200/30 backdrop-blur-sm border-0 shadow-lg h-full flex flex-col">
+    <Card className="group overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white/80 backdrop-blur-sm border-0 shadow-xl h-full flex flex-col">
       <div className="relative overflow-hidden rounded-t-xl">
         <img
           src={product.image || "/placeholder.svg?height=400&width=350&query=elegant candle"}
@@ -51,11 +51,11 @@ export function ProductCard({ product }: ProductCardProps) {
         </Badge>
       </div>
 
-      <CardContent className="px-4 py-2 flex-grow">
-        <h3 className="font-semibold text-lg sm:text-xl mb-3 line-clamp-2 text-black leading-tight">
+      <CardContent className="px-4 py-0.5 flex-grow">
+        <h3 className="font-semibold text-lg sm:text-xl mb-1.5 line-clamp-2 text-black leading-tight">
           {product.name}
         </h3>
-        <p className="text-sm mb-4 line-clamp-3 leading-relaxed text-black">{product.description}</p>
+        <p className="text-sm mb-1.5 line-clamp-3 leading-relaxed text-black">{product.description}</p>
         <div className="flex items-center justify-between mt-auto">
           <span className="text-2xl sm:text-3xl font-bold gradient-text">${product.price.toLocaleString()}</span>
         </div>
