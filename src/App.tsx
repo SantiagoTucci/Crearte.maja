@@ -10,7 +10,6 @@ import { ThemeProvider } from "next-themes";
 
 function App() {
   return (
-    <ThemeProvider attribute="class">
       <CartProvider>
         <Router>
           <div className="flex flex-col min-h-screen">
@@ -27,7 +26,6 @@ function App() {
           </div>
         </Router>
       </CartProvider>
-    </ThemeProvider>
   );
 }
 
