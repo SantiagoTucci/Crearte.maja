@@ -11,9 +11,9 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "2",
-    name: "Vela puntitos",
+    name: "Vela Dalia",
     description: "Vela de puntitos para decorar tu espacio.",
-    price: 3000,
+    price: 3500,
     type: "decorativa",
     image: "/VelaPuntitos.png"
   },
