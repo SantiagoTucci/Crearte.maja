@@ -68,16 +68,16 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
   if (isSuccess) {
     return (
-      <div className="container mx-auto px-4 py-12 bg-white">
+      <div className="container mx-auto px-4 py-12 bg-white/80 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto text-center">
           <div className="mb-8">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h1 className="text-3xl font-bold mb-4 text-black">¡Gracias por tu pedido!</h1>
-            <p className="text-lg mb-6 text-black">
+            <h1 className="text-3xl font-bold mb-4 text-brown-900">¡Gracias por tu pedido!</h1>
+            <p className="text-lg mb-6 text-brown-700">
               Tu pedido ha sido recibido y será procesado pronto.
             </p>
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-              <p className="text-green-800">
+            <div className="bg-brown-50 border border-brown-200 rounded-lg p-6">
+              <p className="text-brown-800">
                 <strong>Próximos pasos:</strong>
                 <br />
                 El seguimiento de tu pedido y la coordinación del pago se realizará por correo electrónico.
@@ -88,7 +88,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
           <Button
             onClick={onBack}
-            className="bg-gradient-to-r from-blush-400 to-dusty-rose-400 hover:from-blush-500 hover:to-dusty-rose-500 text-white"
+            className="bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white"
           >
             Volver a la Tienda
           </Button>
@@ -98,16 +98,16 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 bg-white text-black">
+    <div className="container mx-auto px-4 py-8 bg-white/80 backdrop-blur-sm text-brown-900">
       <div className="max-w-4xl mx-auto">
-        <Button variant="ghost" onClick={onBack} className="mb-6 cursor-pointer text-black">
+        <Button variant="ghost" onClick={onBack} className="mb-6 cursor-pointer text-brown-900">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Volver al Carrito
         </Button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Formulario */}
-          <Card className="pt-4.5 border border-gray-200 shadow-xl bg-white text-black">
+          <Card className="pt-4.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
             <CardHeader>
               <CardTitle>Información de Contacto</CardTitle>
             </CardHeader>
@@ -115,14 +115,14 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Nombre */}
                 <div>
-                  <Label htmlFor="name" className="text-black">Nombre Completo</Label>
+                  <Label htmlFor="name" className="text-brown-900">Nombre Completo</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                    <User className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
                       id="name"
                       type="text"
                       placeholder="Tu nombre completo"
-                      className="pl-10 text-black"
+                      className="pl-10 text-brown-900"
                       value={formData.name}
                       onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                       required
@@ -132,14 +132,14 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Email */}
                 <div>
-                  <Label htmlFor="email" className="text-black">Correo Electrónico</Label>
+                  <Label htmlFor="email" className="text-brown-900">Correo Electrónico</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                    <Mail className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
                       id="email"
                       type="email"
                       placeholder="tu@email.com"
-                      className="pl-10 text-black"
+                      className="pl-10 text-brown-900"
                       value={formData.email}
                       onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                       required
@@ -149,14 +149,14 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Teléfono */}
                 <div>
-                  <Label htmlFor="phone" className="text-black">Número de Teléfono</Label>
+                  <Label htmlFor="phone" className="text-brown-900">Número de Teléfono</Label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                    <Phone className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
                       id="phone"
                       type="tel"
                       placeholder="+34 600 123 456"
-                      className="pl-10 text-black"
+                      className="pl-10 text-brown-900"
                       value={formData.phone}
                       onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
                       required
@@ -166,14 +166,14 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Dirección */}
                 <div>
-                  <Label htmlFor="address" className="text-black">Dirección de Entrega</Label>
+                  <Label htmlFor="address" className="text-brown-900">Dirección de Entrega</Label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
                       id="address"
                       type="text"
                       placeholder="Calle, número, ciudad"
-                      className="pl-10 text-black"
+                      className="pl-10 text-brown-900"
                       value={formData.address}
                       onChange={(e) => setFormData((prev) => ({ ...prev, address: e.target.value }))}
                       required
@@ -184,7 +184,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                 {/* Botón */}
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blush-400 to-dusty-rose-400 hover:from-blush-500 hover:to-dusty-rose-500 text-white cursor-pointer mt-3"
+                  className="w-full bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white cursor-pointer mt-3"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -201,7 +201,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
           </Card>
 
           {/* Resumen */}
-          <Card className="pt-4.5 border border-gray-200 shadow-xl bg-white text-black">
+          <Card className="pt-4.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
             <CardHeader>
               <CardTitle>Resumen del Pedido</CardTitle>
             </CardHeader>
@@ -218,7 +218,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                     />
                     <div className="flex-1">
                       <h4 className="font-medium">{item.name}</h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-brown-500">
                         {item.quantity} x ${item.price.toLocaleString()}
                       </p>
                     </div>
@@ -232,7 +232,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 <div className="flex justify-between items-center text-2xl font-bold">
                   <span>Total:</span>
-                  <span className="text-rose-600">${total.toLocaleString()}</span>
+                  <span>${total.toLocaleString()}</span>
                 </div>
               </div>
             </CardContent>
