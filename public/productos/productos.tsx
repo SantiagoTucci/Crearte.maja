@@ -27,11 +27,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "6",
-    name: "Vela Rosa Romántica",
-    description: "Delicada fragancia de rosas con toques de vainilla. Ideal para cenas románticas.",
-    price: 3000,
+    name: "Vela coconut dream",
+    description: "Vela de cera de soja natural con esencia de coco & vainilla.",
+    price: 4500,
     type: "aromática",
-    image: "/vela.jpg"
+    image: "/retorcida.jpg"
   },
   {
     id: "7",
