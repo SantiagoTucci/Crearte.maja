@@ -3,43 +3,27 @@ import { Product } from "@/types/product"
 export const sampleProducts: Product[] = [
   {
     id: "1",
-    name: "Vela Flor",
-    description: "Vela aromática de mango y maracuya con cera de soja natura.",
-    price: 3500,
+    name: "Vela Rosa",
+    description: "Vela aromática de mango y maracuya con cera de soja natural.",
+    price: 4500,
     type: "aromática",
     image: "/velaFlor.png"
   },
   {
     id: "2",
-    name: "Lapicero y ordenador",
-    description: "Un lapicero y ordenador para tu escritorio.",
-    price: 2000,
+    name: "Vela puntitos",
+    description: "Vela de puntitos para decorar tu espacio.",
+    price: 3000,
     type: "decorativa",
-    image: "/lapicero.jpeg"
+    image: "/VelaPuntitos.png"
   },
   {
     id: "3",
-    name: "Vela Personalizada Boda",
-    description: "Vela personalizada para eventos especiales. Incluye grabado de nombres y fecha.",
-    price: 4500,
-    type: "casamiento",
-    image: "/vela.jpg"
-  },
-  {
-    id: "4",
-    name: "Vela Eucalipto Relajante",
-    description: "Vela con aceite esencial de eucalipto. Propiedades relajantes y purificadoras del ambiente.",
-    price: 2800,
-    type: "relajante",
-    image: "/vela.jpg"
-  },
-  {
-    id: "5",
-    name: "Vela retorcida",
-    description: "Mezcla energizante de naranja, limón y pomelo.",
-    price: 4000,
+    name: "Lapicero y ordenador",
+    description: "Un lapicero y ordenador para tu escritorio.",
+    price: 6500,
     type: "decorativa",
-    image: "/retorcida.jpg"
+    image: "/lapicero.jpg"
   },
   {
     id: "6",
