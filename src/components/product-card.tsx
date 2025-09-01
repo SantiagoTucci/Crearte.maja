@@ -14,7 +14,6 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart()
   const [isLoading, setIsLoading] = useState(false)
-  const [isFavorite, setIsFavorite] = useState(false)
 
   const handleAddToCart = async () => {
     setIsLoading(true)
@@ -26,13 +25,13 @@ export function ProductCard({ product }: ProductCardProps) {
 
   const getTypeColor = (type: string) => {
     const colors = {
-      aromática: "bg-blush-100 text-blush-700 dark:bg-blush-900/30 dark:text-blush-300",
-      decorativa: "bg-dusty-rose-100 text-dusty-rose-700 dark:bg-dusty-rose-900/30 dark:text-dusty-rose-300",
-      personalizada: "bg-blush-200 text-blush-800 dark:bg-blush-800/30 dark:text-blush-200",
-      relajante: "bg-dusty-rose-200 text-dusty-rose-800 dark:bg-dusty-rose-800/30 dark:text-dusty-rose-200",
-      energizante: "bg-blush-300 text-blush-900 dark:bg-blush-700/30 dark:text-blush-100",
+      aromática: "bg-brown-100 text-brown-700 dark:bg-brown-900/30 dark:text-brown-300",
+      decorativa: "bg-sand-100 text-sand-700 dark:bg-sand-900/30 dark:text-sand-300",
+      personalizada: "bg-brown-200 text-brown-800 dark:bg-brown-800/30 dark:text-brown-200",
+      relajante: "bg-sand-200 text-sand-800 dark:bg-sand-800/30 dark:text-sand-200",
+      energizante: "bg-brown-300 text-brown-900 dark:bg-brown-700/30 dark:text-brown-100",
     }
-    return colors[type as keyof typeof colors] || "bg-blush-100 text-blush-700 dark:bg-blush-900/30 dark:text-blush-300"
+    return colors[type as keyof typeof colors] || "bg-sand-100 text-sand-700 dark:bg-sand-900/30 dark:text-sand-300"
   }
 
   return (
@@ -52,22 +51,22 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       <CardContent className="px-4 py-0.5 flex-grow">
-        <h3 className="font-semibold text-lg sm:text-xl mb-1.5 line-clamp-2 text-black leading-tight">
+        <h3 className="font-semibold text-lg sm:text-xl mb-1.5 line-clamp-2 text-brown-900 leading-tight">
           {product.name}
         </h3>
-        <p className="text-sm mb-1.5 line-clamp-3 leading-relaxed text-black">{product.description}</p>
+        <p className="text-sm mb-1.5 line-clamp-3 leading-relaxed text-brown-700">{product.description}</p>
         <div className="flex items-center justify-between mt-auto">
           <span className="text-2xl sm:text-3xl font-bold gradient-text">${product.price.toLocaleString()}</span>
         </div>
       </CardContent>
 
-      <CardFooter className="pt-0 px-4 pb-1">
+      <CardFooter className="pt-0 px-4 pb-3.5">
         <Button
-          className="w-full bg-gradient-to-r from-blush-400 to-dusty-rose-400 hover:from-blush-500 hover:to-dusty-rose-500 text-white cursor-pointer font-medium py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-500 border-0 text-sm sm:text-base touch-manipulation"
+          className="w-full bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white cursor-pointer font-medium py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-500 border-0 text-sm sm:text-base touch-manipulation"
           onClick={handleAddToCart}
           disabled={isLoading}
         >
-          {isLoading ? (
+          {isLoading ? ( 
             <div className="flex items-center justify-center">
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
               <span>Agregando...</span>

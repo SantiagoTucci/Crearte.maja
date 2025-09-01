@@ -14,7 +14,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-white text-black/95 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold italic gradient-text">Crearte.Maja</h1>
+          <h1 className="text-xl font-semibold gradient-text">Crearte.Maja</h1>
         </div>
 
         {/* <nav className="hidden md:flex items-center space-x-6">
@@ -31,7 +31,7 @@ export function Header() {
 
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" className="relative" onClick={toggleCart}>
-            <ShoppingCart className="h-5 w-5" />
+            <ShoppingCart className="h-5 w-5 text-brown-700" />
             {totalItems > 0 && (
               <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full text-black text-xs flex items-center justify-center">
                 {totalItems}

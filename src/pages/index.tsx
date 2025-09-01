@@ -65,7 +65,7 @@ export default function Home() {
 
           <main className="container mx-auto px-4 py-12 sm:py-16 bg-white">
             <div className="mb-8">
-              <h2 className="text-3xl sm:text-4xl font-bold text-center sm:mb-4 gradient-text">Nuestra Colección</h2>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-center sm:mb-4 gradient-text">Nuestra Colección</h2>
             </div>
 
             <FilterBar types={availableTypes} selectedTypes={selectedTypes} onTypeChange={setSelectedTypes} />

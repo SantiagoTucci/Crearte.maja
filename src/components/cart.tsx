@@ -27,23 +27,34 @@ export function Cart({ onCheckout }: CartProps) {
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
   const total = getTotal()
 
+  const getTypeColor = (type: string) => {
+    const colors = {
+      aromática: "bg-brown-100 text-brown-700 dark:bg-brown-900/30 dark:text-brown-300",
+      decorativa: "bg-sand-100 text-sand-700 dark:bg-sand-900/30 dark:text-sand-300",
+      personalizada: "bg-brown-200 text-brown-800 dark:bg-brown-800/30 dark:text-brown-200",
+      relajante: "bg-sand-200 text-sand-800 dark:bg-sand-800/30 dark:text-sand-200",
+      energizante: "bg-brown-300 text-brown-900 dark:bg-brown-700/30 dark:text-brown-100",
+    }
+    return colors[type as keyof typeof colors] || "bg-sand-100 text-sand-700 dark:bg-sand-900/30 dark:text-sand-300"
+  }
+
   return (
     <Sheet open={isOpen} onOpenChange={toggleCart}>
-      <SheetContent className="w-full sm:max-w-xl md:max-w-2xl bg-white text-black">
+      <SheetContent className="w-full sm:max-w-xl md:max-w-2xl bg-white backdrop-blur-sm text-brown-900">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
             <ShoppingCart className="h-5 w-5" />
             Carrito de Compras
-            {totalItems > 0 && <Badge variant="secondary">{totalItems} productos</Badge>}
+            {totalItems > 0 && <Badge className="bg-brown-200 text-brown-800">{totalItems} productos</Badge>}
           </SheetTitle>
         </SheetHeader>
 
         {items.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full text-center px-3">
+          <div className="flex flex-col items-center justify-center h-full text-center px-3 text-brown-700">
             <ShoppingCart className="h-16 w-16 mb-4" />
             <h3 className="text-lg font-semibold mb-2">Tu carrito está vacío</h3>
             <p className="mb-4">Agrega algunos productos para comenzar tu pedido</p>
-            <Button onClick={toggleCart} variant="outline">
+            <Button onClick={toggleCart} variant="outline" className="border-brown-300 text-brown-900 hover:bg-brown-50">
               Continuar Comprando
             </Button>
           </div>
@@ -52,7 +63,7 @@ export function Cart({ onCheckout }: CartProps) {
             <ScrollArea className="flex-1 -mx-6 px-8">
               <div className="space-y-4 py-2">
                 {items.map((item) => (
-                  <div key={item.id} className="flex items-center space-x-4 p-3 border rounded-lg">
+                  <div key={item.id} className="flex items-center space-x-4 p-3 border rounded-lg border-brown-200">
                     <img
                       src={item.image || "/placeholder.svg"}
                       alt={item.name}
@@ -63,15 +74,15 @@ export function Cart({ onCheckout }: CartProps) {
 
                     <div className="flex-1 min-w-0">
                       <h4 className="font-medium truncate">{item.name}</h4>
-                      <p className="text-sm">{item.type}</p>
-                      <p className="font-semibold">${item.price.toLocaleString()}</p>
+                      <Badge className={`${getTypeColor(item.type)} rounded-full px-2 py-0.5 text-xs`}>{item.type}</Badge>
+                      <p className="font-semibold mt-1">${item.price.toLocaleString()}</p>
                     </div>
 
                     <div className="flex items-center space-x-2">
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-8 w-8 bg-transparent"
+                        className="h-8 w-8 bg-transparent text-brown-700 hover:bg-brown-50"
                         onClick={() => updateQuantity(item.id, Math.max(0, item.quantity - 1))}
                       >
                         <Minus className="h-3 w-3" />
@@ -82,7 +93,7 @@ export function Cart({ onCheckout }: CartProps) {
                       <Button
                         variant="outline"
                         size="icon"
-                        className="h-8 w-8 bg-transparent"
+                        className="h-8 w-8 bg-transparent text-brown-700 hover:bg-brown-50"
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                       >
                         <Plus className="h-3 w-3" />
@@ -102,14 +113,14 @@ export function Cart({ onCheckout }: CartProps) {
               </div>
             </ScrollArea>
 
-            <div className="border-t pt-4 space-y-4 px-6">
+            <div className="border-t border-gray-300 pt-4 space-y-4 px-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold">${total.toLocaleString()}</span>
+                <span className="text-2xl font-bold text-brown-900">${total.toLocaleString()}</span>
               </div>
 
               <Button
-                className="w-full bg-gradient-to-r from-blush-400 to-dusty-rose-400 hover:from-blush-500 hover:to-dusty-rose-500 text-white"
+                className="w-full bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white cursor-pointer"
                 onClick={handleCheckout}
                 disabled={isLoading}
               >
@@ -123,7 +134,7 @@ export function Cart({ onCheckout }: CartProps) {
                 )}
               </Button>
 
-              <Button variant="outline" className="w-full bg-transparent" onClick={toggleCart}>
+              <Button variant="outline" className="w-full border border-gray-700 text-brown-900 hover:bg-brown-50 cursor-pointer" onClick={toggleCart}>
                 Continuar Comprando
               </Button>
             </div>
