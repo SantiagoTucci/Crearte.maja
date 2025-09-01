@@ -35,11 +35,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "5",
-    name: "Vela Cítrica Energizante",
-    description: "Mezcla energizante de naranja, limón y pomelo. Perfecta para espacios de trabajo.",
-    price: 2600,
-    type: "energizante",
-    image: "/vela.jpg"
+    name: "Vela retorcida",
+    description: "Mezcla energizante de naranja, limón y pomelo.",
+    price: 4000,
+    type: "decorativa",
+    image: "/retorcida.jpg"
   },
   {
     id: "6",
