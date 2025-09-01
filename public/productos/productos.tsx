@@ -23,7 +23,7 @@ export const sampleProducts: Product[] = [
     description: "Un lapicero y ordenador para tu escritorio.",
     price: 6500,
     type: "decorativa",
-    image: "/lapicero.jpg"
+    image: "/lapicero.jpeg"
   },
   {
     id: "6",
