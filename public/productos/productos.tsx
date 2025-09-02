@@ -75,10 +75,10 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "12",
-    name: "Vela Artística Multicolor",
-    description: "Vela decorativa con capas de colores vibrantes. Una obra de arte funcional.",
-    price: 3800,
-    type: "decorativa",
-    image: "/vela.jpg"
+    name: "Portasahumerio Flor de Loto Blanco",
+    description: "Portasahumerio flor de loto, simboliza la superación, purez y renacer.",
+    price: 4500,
+    type: "relajació",
+    image: "/portasahumerioflorblanco.jpg"
   }
 ]
