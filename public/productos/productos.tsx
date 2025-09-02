@@ -71,7 +71,7 @@ export const sampleProducts: Product[] = [
     description: "Vela de cera de soja aromatizada...refrescante...desde el fondo del mar.",
     price: 3500,
     type: "decorativa",
-    image: "/vela Vieira.jpg"
+    image: "/Vela Vieira.jpg"
   },
   {
     id: "12",
