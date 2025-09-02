@@ -94,7 +94,7 @@ export const sampleProducts: Product[] = [
     name: "Lapicero y ordenador de escritorio",
     description: "Lapicero y ordenador de escritorio liso blanco.",
     price: 7500,
-    type: "decorativa"
+    type: "decorativa",
     image: "/lapiceroblanco.jpg"
   },
   {
