@@ -29,7 +29,7 @@ export function Hero({ products }: HeroProps) {
         <h1 className="text-3xl md:text-5xl font-semibold mb-3 text-white leading-tight">
           Conoce nuestros productos
         </h1>
-        <p className="text-xl md:text-2xl mb-2 md:mb-6 max-w-4xl mx-auto leading-relaxed font-light text-brown-700 dark:text-sand-200">
+        <p className="text-xl md:text-2xl mb-2 md:mb-6 max-w-4xl mx-auto leading-relaxed font-light text-brown-200 dark:text-sand-200">
           Ilumina tu hogar con la calidez de nuestras velas artesanales.
         </p>
       </div>
