@@ -63,7 +63,7 @@ export const sampleProducts: Product[] = [
     description: "Vela decorativa, diseño especial.",
     price: 4500,
     type: "decorativa",
-    image: "/velabomba.jpg"
+    image: "/Velabomba.jpg"
   },
   {
     id: "11",
