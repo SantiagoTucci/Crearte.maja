@@ -59,11 +59,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "10",
-    name: "Vela Cumpleaños Personalizada",
-    description: "Vela especial para cumpleaños con mensaje personalizado y colores a elección.",
-    price: 4000,
-    type: "personalizada",
-    image: "/vela.jpg"
+    name: "Vela Bomba",
+    description: "Vela decorativa, diseño especial.",
+    price: 4500,
+    type: "decorativa",
+    image: "/velabomba.jpg"
   },
   {
     id: "11",
