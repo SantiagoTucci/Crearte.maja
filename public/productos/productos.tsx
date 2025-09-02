@@ -51,11 +51,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "9",
-    name: "Vela Menta Refrescante",
-    description: "Fragancia refrescante de menta y hierbabuena. Ideal para espacios de estudio.",
-    price: 2400,
-    type: "energizante",
-    image: "/vela.jpg"
+    name: "Vela Rosedal mediana",
+    description: "Romántica y decorativa.",
+    price: 4500,
+    type: "decorativa",
+    image: "/velarosedalmediana.jpg"
   },
   {
     id: "10",
