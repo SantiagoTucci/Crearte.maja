@@ -78,7 +78,7 @@ export const sampleProducts: Product[] = [
     name: "Portasahumerio Flor de Loto Blanco",
     description: "Portasahumerio flor de loto, simboliza la superación, purez y renacer.",
     price: 4500,
-    type: "relajació",
+    type: "relajación",
     image: "/portasahumerioflorblanco.jpg"
   }
 ]
