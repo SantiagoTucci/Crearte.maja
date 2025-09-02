@@ -43,11 +43,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "8",
-    name: "Vela Sándalo Meditación",
-    description: "Aroma de sándalo para prácticas de meditación y yoga. Favorece la concentración.",
+    name: "Vela rosedal chica",
+    description: "Diseño romántico y minimalista.",
     price: 3500,
-    type: "relajante",
-    image: "/vela.jpg"
+    type: "decorativa",
+    image: "/vela rosedal.jpg"
   },
   {
     id: "9",
