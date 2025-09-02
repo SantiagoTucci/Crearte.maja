@@ -30,7 +30,7 @@ export const sampleProducts: Product[] = [
     name: "Vela coconut dream",
     description: "Vela de cera de soja natural con esencia de coco & vainilla.",
     price: 4500,
-    type: "aromática",
+    type: "decorativa",
     image: "/retorcida.jpg"
   },
   {
