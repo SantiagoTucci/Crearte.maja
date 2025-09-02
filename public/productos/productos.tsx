@@ -80,5 +80,31 @@ export const sampleProducts: Product[] = [
     price: 4500,
     type: "relajación",
     image: "/portasahumerioflorloto.jpg"
+  },
+  {
+    id: "13",
+    name: "Portasahumerio Flor de Loto Rosa",
+    description: "Portasahumerio flor de loto rosa, simboliza la superación, purez y renacer.",
+    price: 4500,
+    type: "relajación",
+    image: "/portasahumerioflorrosa.jpg"
+  },
+  {
+    id: "14",
+    name: "Portasahumerio Flor de Loto Blanco",
+    description: "Portasahumerio flor de loto, simboliza la superación, purez y renacer.",
+    price: 4500,
+    type: "relajación",
+    image: "/portasahumerioflorloto.jpg"
+  },
+  {
+    id: "15",
+    name: "Portasahumerio Flor de Loto Blanco",
+    description: "Portasahumerio flor de loto, simboliza la superación, purez y renacer.",
+    price: 4500,
+    type: "relajación",
+    image: "/portasahumerioflorloto.jpg"
   }
+
+
 ]
