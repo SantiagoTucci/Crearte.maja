@@ -67,11 +67,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "11",
-    name: "Vela Vainilla Clásica",
-    description: "Clásica vela de vainilla con aroma dulce y cálido. Un favorito atemporal.",
-    price: 2300,
-    type: "aromática",
-    image: "/vela.jpg"
+    name: "Vela Vieira",
+    description: "Vela de cera de soja aromatizada...refrescante...desde el fondo del mar.",
+    price: 3500,
+    type: "decorativa",
+    image: "/vela Vieira.jpg"
   },
   {
     id: "12",
