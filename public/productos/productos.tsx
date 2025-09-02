@@ -35,11 +35,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "7",
-    name: "Vela Minimalista Blanca",
-    description: "Diseño minimalista en color blanco puro. Perfecta para cualquier decoración.",
-    price: 2200,
+    name: "Vela 4x4",
+    description: "Diseño minimalista en color marfil. Perfecta para cualquier decoración.",
+    price: 3500,
     type: "decorativa",
-    image: "/vela.jpg"
+    image: "/vela 4x4.jpg"
   },
   {
     id: "8",
