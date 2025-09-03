@@ -116,10 +116,10 @@ export const sampleProducts: Product[] = [
   {
     id: "17",
     name: "Lapicero y ordenador de escritorio",
-    description: "Lapicero y ordenador de escritorio liso rosa.",
+    description: "Ideal para ordenar y decorar tu escritorio",
     price: 7500,
     type: "decorativa",
-    image: "/lapicerorosa.jpg"
+    image: "/lapicer estampado flores.jpg"
   },
   {
     id: "18",
