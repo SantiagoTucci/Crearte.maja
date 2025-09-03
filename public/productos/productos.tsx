@@ -104,6 +104,46 @@ export const sampleProducts: Product[] = [
     price: 7500,
     type: "decorativa",
     image: "/lapicerorosa.jpg"
+  },
+  {
+    id: "16",
+    name: "Vela Estampada Bombé",
+    description: "Vela de cera de soja aromatizada en portavelas estampado.",
+    price: 5500,
+    type: "decorativa",
+    image: "/vela estampadabombe.jpg"
+  },
+  {
+    id: "17",
+    name: "Lapicero y ordenador de escritorio",
+    description: "Lapicero y ordenador de escritorio liso rosa.",
+    price: 7500,
+    type: "decorativa",
+    image: "/lapicerorosa.jpg"
+  },
+  {
+    id: "18",
+    name: "Lapicero y ordenador de escritorio",
+    description: "Lapicero y ordenador de escritorio liso rosa.",
+    price: 7500,
+    type: "decorativa",
+    image: "/lapicerorosa.jpg"
+  },
+  {
+    id: "19",
+    name: "Lapicero y ordenador de escritorio",
+    description: "Lapicero y ordenador de escritorio liso rosa.",
+    price: 7500,
+    type: "decorativa",
+    image: "/lapicerorosa.jpg"
+  },
+  {
+    id: "20",
+    name: "Lapicero y ordenador de escritorio",
+    description: "Lapicero y ordenador de escritorio liso rosa.",
+    price: 7500,
+    type: "decorativa",
+    image: "/lapicerorosa.jpg"
   }
 
 
