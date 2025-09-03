@@ -119,7 +119,7 @@ export const sampleProducts: Product[] = [
     description: "Ideal para ordenar y decorar tu escritorio",
     price: 7500,
     type: "decorativa",
-    image: "/lapicer estampado flores.jpg"
+    image: "/lapicero estampado flores.jpg"
   },
   {
     id: "18",
