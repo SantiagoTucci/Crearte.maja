@@ -144,7 +144,47 @@ export const sampleProducts: Product[] = [
     price: 2500,
     type: "decorativa",
     image: "/portavelacuadrado.jpg"
-  }
+  },
+  {
+    id: "21",
+    name: "Portavela cuadrado",
+    description: "Para dejar tus muebles protegidos.",
+    price: 2500,
+    type: "decorativa",
+    image: "/portavelacuadrado.jpg"
+  },
+  {
+    id: "22",
+    name: "Vela Cubo",
+    description: "Seguí decorando tus ambientes con un toque especial.",
+    price: 3500,
+    type: "decorativa",
+    image: "/velacubo.jpg"
+  },
+  {
+    id: "20",
+    name: "Portavela cuadrado",
+    description: "Para dejar tus muebles protegidos.",
+    price: 2500,
+    type: "decorativa",
+    image: "/portavelacuadrado.jpg"
+  },
+  {
+    id: "20",
+    name: "Portavela cuadrado",
+    description: "Para dejar tus muebles protegidos.",
+    price: 2500,
+    type: "decorativa",
+    image: "/portavelacuadrado.jpg"
+  },
+  {
+    id: "20",
+    name: "Portavela cuadrado",
+    description: "Para dejar tus muebles protegidos.",
+    price: 2500,
+    type: "decorativa",
+    image: "/portavelacuadrado.jpg"
+  },
 
 
 ]
