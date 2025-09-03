@@ -199,7 +199,7 @@ export const sampleProducts: Product[] = [
     description: "Vela de cera de soja, elegí el aroma.",
     price: 6500,
     type: "decorativa",
-    image: "/velaLatamandala.jpg"
+    image: "/VelaLatamandala.jpg"
   },
   {
     id: "28",
@@ -207,7 +207,7 @@ export const sampleProducts: Product[] = [
     description: "Vela de cera de soja, elegí el aroma.",
     price: 6500,
     type: "decorativa",
-    image: "/velaLatarosa.jpg"
+    image: "/VelaLatarosa.jpg"
   },
 
 
