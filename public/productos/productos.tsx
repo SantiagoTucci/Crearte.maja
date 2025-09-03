@@ -131,11 +131,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "19",
-    name: "Lapicero y ordenador de escritorio",
-    description: "Lapicero y ordenador de escritorio liso rosa.",
-    price: 7500,
+    name: "Portavela ovalado",
+    description: "Para dejar tus muebles protegidos.",
+    price: 2500,
     type: "decorativa",
-    image: "/lapicerorosa.jpg"
+    image: "/portavelasovaladado.jpg"
   },
   {
     id: "20",
