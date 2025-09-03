@@ -135,7 +135,7 @@ export const sampleProducts: Product[] = [
     description: "Para dejar tus muebles protegidos.",
     price: 2500,
     type: "decorativa",
-    image: "/portavelasovaladado.jpg"
+    image: "/portavelasovalado.jpg"
   },
   {
     id: "20",
