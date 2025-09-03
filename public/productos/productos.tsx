@@ -147,11 +147,11 @@ export const sampleProducts: Product[] = [
   },
   {
     id: "21",
-    name: "Portavela cuadrado",
-    description: "Para dejar tus muebles protegidos.",
-    price: 2500,
+    name: "Rosedal decorativo",
+    description: "Detalle cálido, simple, que cambia la energía de la habitación.",
+    price: 5500,
     type: "decorativa",
-    image: "/portavelacuadrado.jpg"
+    image: "/decorosedal.jpg"
   },
   {
     id: "22",
