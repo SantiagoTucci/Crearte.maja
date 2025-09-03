@@ -178,12 +178,12 @@ export const sampleProducts: Product[] = [
     image: "/vela 3x3.jpg"
   },
   {
-    id: "20",
-    name: "Portavela cuadrado",
-    description: "Para dejar tus muebles protegidos.",
-    price: 2500,
+    id: "25",
+    name: "Vela Jardín secreto",
+    description: "Descubre el aroma secreto de esta flor.",
+    price: 6500,
     type: "decorativa",
-    image: "/portavelacuadrado.jpg"
+    image: "/velajardinsecreto.jpg"
   },
 
 
