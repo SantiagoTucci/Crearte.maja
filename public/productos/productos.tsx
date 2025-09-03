@@ -177,13 +177,37 @@ export const sampleProducts: Product[] = [
     type: "decorativa",
     image: "/vela 3x3.jpg"
   },
-  {
+    {
     id: "25",
     name: "Vela Jardín secreto",
     description: "Descubre el aroma secreto de esta flor.",
     price: 6500,
     type: "decorativa",
     image: "/velajardinsecreto.jpg"
+  },
+  {
+    id: "26",
+    name: "Vela Lata Corazones",
+    description: "Vela de cera de soja, elegí el aroma.",
+    price: 6500,
+    type: "decorativa",
+    image: "/velaLatacorazones.jpg"
+  },
+  {
+    id: "27",
+    name: "Vela Lata Mandala",
+    description: "Vela de cera de soja, elegí el aroma.",
+    price: 6500,
+    type: "decorativa",
+    image: "/velaLatamandala.jpg"
+  },
+  {
+    id: "28",
+    name: "Vela Lata Rosa",
+    description: "Vela de cera de soja, elegí el aroma.",
+    price: 6500,
+    type: "decorativa",
+    image: "/velaLatarosa.jpg"
   },
 
 
