@@ -162,12 +162,12 @@ export const sampleProducts: Product[] = [
     image: "/velacubo.jpg"
   },
   {
-    id: "20",
-    name: "Portavela cuadrado",
-    description: "Para dejar tus muebles protegidos.",
-    price: 2500,
+    id: "22",
+    name: "Vela Cubo Mágico",
+    description: "Un pedacito de juego, arte y nostalgia en tu mesa.",
+    price: 3500,
     type: "decorativa",
-    image: "/portavelacuadrado.jpg"
+    image: "/velacubomagico.jpg"
   },
   {
     id: "20",
