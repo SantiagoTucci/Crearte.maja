@@ -170,12 +170,12 @@ export const sampleProducts: Product[] = [
     image: "/velacubomagico.jpg"
   },
   {
-    id: "20",
-    name: "Portavela cuadrado",
-    description: "Para dejar tus muebles protegidos.",
-    price: 2500,
+    id: "24",
+    name: "Vela 3 x 3",
+    description: "Vela de cera de soja aromatizada.",
+    price: 3500,
     type: "decorativa",
-    image: "/portavelacuadrado.jpg"
+    image: "/vela 3x3.jpg"
   },
   {
     id: "20",
