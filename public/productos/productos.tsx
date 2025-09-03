@@ -162,7 +162,7 @@ export const sampleProducts: Product[] = [
     image: "/velacubo.jpg"
   },
   {
-    id: "22",
+    id: "23",
     name: "Vela Cubo Mágico",
     description: "Un pedacito de juego, arte y nostalgia en tu mesa.",
     price: 3500,
