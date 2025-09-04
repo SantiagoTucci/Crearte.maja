@@ -209,6 +209,20 @@ export const sampleProducts: Product[] = [
     type: "decorativa",
     image: "/VelaLatarosa.jpg"
   },
+  {
+    id: "28",
+    name: "Vela Lata Rosa",
+    description: "Vela de cera de soja, elegí el aroma.",
+    price: 6500,
+    type: "decorativa",
+    image: "/VelaLatarosa.jpg"
+  },
+  {
+    id: "29",
+    name: "Alhajero",
+    description: "Cada joya cuenta una historia... necesita un lugar especial.",
+    price: 6500,
+    type: "decorativa",
+    image: "/alajero.jpg"
+  },
 
-
-]
