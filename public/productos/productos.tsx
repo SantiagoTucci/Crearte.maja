@@ -226,3 +226,4 @@ export const sampleProducts: Product[] = [
     image: "/alajero.jpg"
   },
 
+]
