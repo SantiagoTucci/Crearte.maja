@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { ShoppingCart, Plus, Minus, Trash2, Info } from "lucide-react"
 import { useCart } from "@/hooks/cart-context"
 
@@ -89,8 +88,10 @@ export function Cart({ onCheckout }: CartProps) {
               </p>
             </div>
 
-            <ScrollArea className="flex-1 -mx-6 px-8">
-              <div className="space-y-4 py-2">
+            {/* 🔹 Scroll oculto */}
+           <div className="flex-1 -mx-6 px-8 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] max-h-[400px]">
+  <div className="space-y-4 py-2">
+
                 {items.map((item) => (
                   <div key={item.id} className="flex items-center space-x-4 p-3 border rounded-lg border-brown-200">
                     <img
@@ -146,7 +147,7 @@ export function Cart({ onCheckout }: CartProps) {
                   </div>
                 ))}
               </div>
-            </ScrollArea>
+            </div>
 
             <div className="border-t border-gray-300 pt-4 space-y-4 px-6">
               <div className="flex justify-between items-center">

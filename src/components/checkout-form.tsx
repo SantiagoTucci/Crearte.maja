@@ -245,45 +245,48 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
           </Card>
 
           {/* Resumen */}
-          <Card className="pt-4.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
-            <CardHeader>
-              <CardTitle>Resumen del Pedido</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {items.map((item) => (
-                  <div key={item.id} className="flex items-center space-x-4">
-                    <img
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.name}
-                      width={60}
-                      height={60}
-                      className="rounded-md object-cover"
-                    />
-                    <div className="flex-1">
-                      <h4 className="font-medium">{item.name}</h4>
-                      <p className="text-sm text-brown-500">
-                        {item.quantity} x ${getItemPrice(item).toLocaleString()}{" "}
-                        {item.quantity >= 5 && (
-                          <span className="ml-1 text-green-600">(Mayorista -30%)</span>
-                        )}
-                      </p>
-                    </div>
-                    <span className="font-semibold">
-                      ${(getItemPrice(item) * item.quantity).toLocaleString()}
-                    </span>
+            <Card className="pt-4.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
+              <CardHeader>
+                <CardTitle>Resumen del Pedido</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Contenedor con scroll solo para los productos */}
+                  <div className="max-h-64 overflow-y-auto pr-2 space-y-4 scrollbar-hidden">
+                    {items.map((item) => (
+                      <div key={item.id} className="flex items-center space-x-4">
+                        <img
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.name}
+                          width={60}
+                          height={60}
+                          className="rounded-md object-cover"
+                        />
+                        <div className="flex-1">
+                          <h4 className="font-medium">{item.name}</h4>
+                          <p className="text-sm text-brown-500">
+                            {item.quantity} x ${getItemPrice(item).toLocaleString()}{" "}
+                            {item.quantity >= 5 && (
+                              <span className="ml-1 text-green-600">(Mayorista -30%)</span>
+                            )}
+                          </p>
+                        </div>
+                        <span className="font-semibold">
+                          ${(getItemPrice(item) * item.quantity).toLocaleString()}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
 
-                <Separator />
+                  <Separator />
 
-                <div className="flex justify-between items-center text-2xl font-bold">
-                  <span>Total:</span>
-                  <span>${total.toLocaleString()}</span>
+                  <div className="flex justify-between items-center text-2xl font-bold">
+                    <span>Total:</span>
+                    <span>${total.toLocaleString()}</span>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
         </div>
       </div>
     </div>
