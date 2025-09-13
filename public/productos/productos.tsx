@@ -222,7 +222,7 @@ export const sampleProducts: Product[] = [
     description: "Mango y Maracuya...un poco de verano.",
     price: 9000,
     type: "aromática",
-    image: "/Vela Mango.jpg"
+    image: "/Vela Mango.jpeg"
   },{
     id: "31",
     name: "Vela Tenesse Vainilla",
