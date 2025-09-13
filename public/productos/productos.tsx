@@ -4,7 +4,7 @@ export const sampleProducts: Product[] = [
   {
     id: "1",
     name: "Vela Rosa",
-    description: "Vela aromática de mango y maracuya con cera de soja natural.",
+    description: "Aroma mango y maracuyá.",
     price: 4500,
     type: "aromática",
     image: "/velaFlor.png"
@@ -12,7 +12,7 @@ export const sampleProducts: Product[] = [
   {
     id: "2",
     name: "Vela Dalia",
-    description: "Vela flor dalia para decorar tu espacio.",
+    description: "Flor decorativa para hogar.",
     price: 3500,
     type: "decorativa",
     image: "/VelaPuntitos.png"
@@ -20,7 +20,7 @@ export const sampleProducts: Product[] = [
   {
     id: "3",
     name: "Lapicero y ordenador",
-    description: "Un lapicero y ordenador estampado para tu escritorio.",
+    description: "Organiza y decora escritorio.",
     price: 7500,
     type: "decorativa",
     image: "/lapicero.jpeg"
@@ -28,7 +28,7 @@ export const sampleProducts: Product[] = [
   {
     id: "6",
     name: "Vela coconut dream",
-    description: "Vela de cera de soja natural con esencia de coco & vainilla.",
+    description: "Coco y vainilla relajante.",
     price: 4500,
     type: "decorativa",
     image: "/retorcida.jpg"
@@ -36,7 +36,7 @@ export const sampleProducts: Product[] = [
   {
     id: "7",
     name: "Vela 4x4",
-    description: "Diseño minimalista en color marfil. Perfecta para cualquier decoración.",
+    description: "Minimalismo en marfil.",
     price: 3500,
     type: "decorativa",
     image: "/vela 4x4.jpg"
@@ -44,7 +44,7 @@ export const sampleProducts: Product[] = [
   {
     id: "8",
     name: "Vela rosedal chica",
-    description: "Diseño romántico y minimalista.",
+    description: "Diseño romántico y simple.",
     price: 3500,
     type: "decorativa",
     image: "/vela rosedal.jpg"
@@ -60,7 +60,7 @@ export const sampleProducts: Product[] = [
   {
     id: "10",
     name: "Vela Bomba",
-    description: "Vela decorativa, diseño especial.",
+    description: "Diseño especial decorativo.",
     price: 4500,
     type: "decorativa",
     image: "/Velabomba.jpg"
@@ -68,7 +68,7 @@ export const sampleProducts: Product[] = [
   {
     id: "11",
     name: "Vela Vieira",
-    description: "Vela de cera de soja aromatizada...refrescante...desde el fondo del mar.",
+    description: "Aroma marino refrescante.",
     price: 3500,
     type: "decorativa",
     image: "/Vela Vieira.jpg"
@@ -76,7 +76,7 @@ export const sampleProducts: Product[] = [
   {
     id: "12",
     name: "Portasahumerio Flor de Loto Blanco",
-    description: "Portasahumerio flor de loto, simboliza la superación, purez y renacer.",
+    description: "Símbolo pureza y renacer.",
     price: 4500,
     type: "relajación",
     image: "/portasahumerioflorloto.jpg"
@@ -84,23 +84,23 @@ export const sampleProducts: Product[] = [
   {
     id: "13",
     name: "Portasahumerio Flor de Loto Rosa",
-    description: "Portasahumerio flor de loto rosa, simboliza la superación, purez y renacer.",
+    description: "Superación, pureza y renacer.",
     price: 4500,
     type: "relajación",
     image: "/portasahumerioflorrosa.jpg"
   },
   {
     id: "14",
-    name: "Lapicero y ordenador de escritorio",
-    description: "Lapicero y ordenador de escritorio liso blanco.",
+    name: "Lapicero escritorio blanco",
+    description: "Organización minimalista blanca.",
     price: 7500,
     type: "decorativa",
     image: "/lapiceroblanco.jpg"
   },
   {
     id: "15",
-    name: "Lapicero y ordenador de escritorio",
-    description: "Lapicero y ordenador de escritorio liso rosa.",
+    name: "Lapicero escritorio rosa",
+    description: "Organización minimalista rosa.",
     price: 7500,
     type: "decorativa",
     image: "/lapicerorosa.jpg"
@@ -108,23 +108,23 @@ export const sampleProducts: Product[] = [
   {
     id: "16",
     name: "Vela Estampada Bombé",
-    description: "Vela de cera de soja aromatizada en portavelas estampado.",
+    description: "Aromática con portavelas estampado.",
     price: 5500,
     type: "decorativa",
     image: "/vela estampadabombe.jpg"
   },
   {
     id: "17",
-    name: "Lapicero y ordenador de escritorio",
-    description: "Ideal para ordenar y decorar tu escritorio",
+    name: "Lapicero flores estampado",
+    description: "Orden y estilo floral.",
     price: 7500,
     type: "decorativa",
     image: "/lapicero estampado flores.jpg"
   },
   {
     id: "18",
-    name: "Lapicero y ordenador de escritorio",
-    description: "Lapicero y ordenador de escritorio estampado romántico.",
+    name: "Lapicero romántico",
+    description: "Diseño delicado y romántico.",
     price: 7500,
     type: "decorativa",
     image: "/lapiceroromantico.jpg"
@@ -132,7 +132,7 @@ export const sampleProducts: Product[] = [
   {
     id: "19",
     name: "Portavela ovalado",
-    description: "Para dejar tus muebles protegidos.",
+    description: "Protección para muebles.",
     price: 2500,
     type: "decorativa",
     image: "/portavelasovalado.jpg"
@@ -140,7 +140,7 @@ export const sampleProducts: Product[] = [
   {
     id: "20",
     name: "Portavela cuadrado",
-    description: "Para dejar tus muebles protegidos.",
+    description: "Cuida tus superficies.",
     price: 2500,
     type: "decorativa",
     image: "/portavelacuadrado.jpg"
@@ -148,7 +148,7 @@ export const sampleProducts: Product[] = [
   {
     id: "21",
     name: "Rosedal decorativo",
-    description: "Detalle cálido, simple, que cambia la energía de la habitación.",
+    description: "Detalle cálido y simple.",
     price: 5500,
     type: "decorativa",
     image: "/decorosedal.jpg"
@@ -156,7 +156,7 @@ export const sampleProducts: Product[] = [
   {
     id: "22",
     name: "Vela Cubo",
-    description: "Seguí decorando tus ambientes con un toque especial.",
+    description: "Minimalismo con estilo.",
     price: 3500,
     type: "decorativa",
     image: "/velacubo.jpg"
@@ -164,7 +164,7 @@ export const sampleProducts: Product[] = [
   {
     id: "23",
     name: "Vela Cubo Mágico",
-    description: "Un pedacito de juego, arte y nostalgia en tu mesa.",
+    description: "Arte, juego y nostalgia.",
     price: 3500,
     type: "decorativa",
     image: "/velacubomagico.jpg"
@@ -172,15 +172,15 @@ export const sampleProducts: Product[] = [
   {
     id: "24",
     name: "Vela 3 x 3",
-    description: "Vela de cera de soja aromatizada.",
+    description: "Aromática de soja.",
     price: 3500,
     type: "decorativa",
     image: "/vela 3x3.jpg"
   },
-    {
+  {
     id: "25",
     name: "Vela Jardín secreto",
-    description: "Descubre el aroma secreto de esta flor.",
+    description: "Aroma floral misterioso.",
     price: 6500,
     type: "decorativa",
     image: "/velajardinsecreto.jpg"
@@ -188,7 +188,7 @@ export const sampleProducts: Product[] = [
   {
     id: "26",
     name: "Vela Lata Corazones",
-    description: "Vela de cera de soja, elegí el aroma.",
+    description: "Soja, aroma a elección.",
     price: 6500,
     type: "decorativa",
     image: "/velaLatacorazones.jpg"
@@ -196,7 +196,7 @@ export const sampleProducts: Product[] = [
   {
     id: "27",
     name: "Vela Lata Mandala",
-    description: "Vela de cera de soja, elegí el aroma.",
+    description: "Soja, aroma a elección.",
     price: 6500,
     type: "decorativa",
     image: "/VelaLatamandala.jpg"
@@ -204,15 +204,7 @@ export const sampleProducts: Product[] = [
   {
     id: "28",
     name: "Vela Lata Rosa",
-    description: "Vela de cera de soja, elegí el aroma.",
-    price: 6500,
-    type: "decorativa",
-    image: "/VelaLatarosa.jpg"
-  },
-  {
-    id: "28",
-    name: "Vela Lata Rosa",
-    description: "Vela de cera de soja, elegí el aroma.",
+    description: "Soja, aroma a elección.",
     price: 6500,
     type: "decorativa",
     image: "/VelaLatarosa.jpg"
@@ -220,7 +212,7 @@ export const sampleProducts: Product[] = [
   {
     id: "29",
     name: "Alhajero",
-    description: "Cada joya cuenta una historia... necesita un lugar especial.",
+    description: "Guarda tus joyas únicas.",
     price: 6500,
     type: "decorativa",
     image: "/alajero.jpg"
