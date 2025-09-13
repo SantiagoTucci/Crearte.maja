@@ -117,4 +117,13 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+  }
 }

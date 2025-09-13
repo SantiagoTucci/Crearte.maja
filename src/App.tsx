@@ -1,19 +1,15 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-import { Header } from "@/components/header";
 import Home from "@/pages/index";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
-import { CartProvider } from "@/hooks/cart-context"; 
-import { ThemeProvider } from "next-themes";
+import { CartProvider } from "@/hooks/cart-context";
 
 function App() {
   return (
       <CartProvider>
         <Router>
           <div className="flex flex-col min-h-screen">
-
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<Home />} />

@@ -46,18 +46,18 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
     <div className="relative max-w-6xl mx-auto">
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm border border-gray-700 rounded-full p-3 hover:bg-card transition-all duration-200 shadow-lg"
+        className="absolute left-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-white border border-gray-600 rounded-full p-3 hover:bg-gray-200 transition-all duration-200 shadow-lg"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="h-5 w-5 text-gray-700" />
+        <ChevronLeft className="h-5 w-5 text-gray-600" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-background/80 backdrop-blur-sm border border-gray-700 rounded-full p-3 hover:bg-card transition-all duration-200 shadow-lg"
+        className="absolute right-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-white border border-gray-600 rounded-full p-3 hover:bg-gray-200 transition-all duration-200 shadow-lg"
         aria-label="Next slide"
       >
-        <ChevronRight className="h-5 w-5 text-gray-700" />
+        <ChevronRight className="h-5 w-5 text-gray-600" />
       </button>
 
       <div className="overflow-hidden rounded-xl">

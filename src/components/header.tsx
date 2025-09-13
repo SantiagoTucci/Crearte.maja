@@ -17,17 +17,17 @@ export function Header() {
           <h1 className="text-xl font-semibold gradient-text">Crearte.Maja</h1>
         </div>
 
-        {/* <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6">
           <a href="inicio" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Inicio
           </a>
           <a href="nosotros" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Nosotros
           </a>
-          <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+          {/* <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Contacto
-          </a>
-        </nav> */}
+          </a> */}
+        </nav>
 
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" className="relative" onClick={toggleCart}>

@@ -15,7 +15,7 @@ interface CheckoutFormProps {
 }
 
 export function CheckoutForm({ onBack }: CheckoutFormProps) {
-  const { items, getTotal, clearCart } = useCart()
+  const { items, clearCart } = useCart()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +25,24 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const total = getTotal()
+  // 🔹 Calcular precio unitario con descuento
+  const getItemPrice = (item: any) => {
+    if (item.quantity >= 5) {
+      return item.price * 0.7 // -30% descuento
+    }
+    return item.price
+  }
+
+  // 🔹 Calcular total
+  const total = items.reduce((sum, item) => sum + getItemPrice(item) * item.quantity, 0)
+
+  // 🔹 Calcular ahorro
+  const ahorro = items.reduce((sum, item) => {
+    if (item.quantity >= 5) {
+      return sum + (item.price - getItemPrice(item)) * item.quantity
+    }
+    return sum
+  }, 0)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -43,21 +60,27 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
         email: formData.email,
         phone: formData.phone,
         address: formData.address,
-        items: items.map(i => `${i.name} x${i.quantity}`).join(", "),
-        total: total.toFixed(2)
+        items: items
+          .map(
+            (i) =>
+              `${i.name} x${i.quantity} - $${getItemPrice(i).toLocaleString()} ${
+                i.quantity >= 5 ? "(Mayorista -30%)" : ""
+              }`
+          )
+          .join(", "),
+        total: total.toFixed(2),
       }
 
       await emailjs.send(
-        "service_5h2z6ks",     
-        "template_ol579jk",      
+        "service_5h2z6ks",
+        "template_ol579jk",
         templateParams,
-        "1nlg1_Tl512ckwhI3"  
+        "1nlg1_Tl512ckwhI3"
       )
 
       setIsSuccess(true)
       clearCart()
       toast.success("¡Pedido enviado exitosamente!")
-
     } catch (error) {
       console.error("Error al enviar correo:", error)
       toast.error("Error al enviar el pedido. Intenta nuevamente.")
@@ -100,7 +123,11 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
   return (
     <div className="container mx-auto px-4 py-8 bg-white/80 backdrop-blur-sm text-brown-900">
       <div className="max-w-4xl mx-auto">
-        <Button variant="ghost" onClick={onBack} className="mb-6 cursor-pointer text-brown-900">
+        <Button
+          variant="ghost"
+          onClick={onBack}
+          className="mb-6 cursor-pointer text-brown-900"
+        >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Volver al Carrito
         </Button>
@@ -113,9 +140,12 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Campos */}
                 {/* Nombre */}
                 <div>
-                  <Label htmlFor="name" className="text-brown-900">Nombre Completo</Label>
+                  <Label htmlFor="name" className="text-brown-900">
+                    Nombre Completo
+                  </Label>
                   <div className="relative">
                     <User className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
@@ -124,7 +154,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                       placeholder="Tu nombre completo"
                       className="pl-10 text-brown-900"
                       value={formData.name}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, name: e.target.value }))
+                      }
                       required
                     />
                   </div>
@@ -132,7 +164,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Email */}
                 <div>
-                  <Label htmlFor="email" className="text-brown-900">Correo Electrónico</Label>
+                  <Label htmlFor="email" className="text-brown-900">
+                    Correo Electrónico
+                  </Label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
@@ -141,7 +175,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                       placeholder="tu@email.com"
                       className="pl-10 text-brown-900"
                       value={formData.email}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, email: e.target.value }))
+                      }
                       required
                     />
                   </div>
@@ -149,7 +185,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Teléfono */}
                 <div>
-                  <Label htmlFor="phone" className="text-brown-900">Número de Teléfono</Label>
+                  <Label htmlFor="phone" className="text-brown-900">
+                    Número de Teléfono
+                  </Label>
                   <div className="relative">
                     <Phone className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
@@ -158,7 +196,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                       placeholder="+34 600 123 456"
                       className="pl-10 text-brown-900"
                       value={formData.phone}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                      }
                       required
                     />
                   </div>
@@ -166,7 +206,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                 {/* Dirección */}
                 <div>
-                  <Label htmlFor="address" className="text-brown-900">Dirección de Entrega</Label>
+                  <Label htmlFor="address" className="text-brown-900">
+                    Dirección de Entrega
+                  </Label>
                   <div className="relative">
                     <MapPin className="absolute left-3 top-3 h-4 w-4 text-brown-400" />
                     <Input
@@ -175,7 +217,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                       placeholder="Calle, número, ciudad"
                       className="pl-10 text-brown-900"
                       value={formData.address}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, address: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, address: e.target.value }))
+                      }
                       required
                     />
                   </div>
@@ -184,7 +228,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                 {/* Botón */}
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white cursor-pointer mt-3"
+                  className="w-full bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white cursor-pointer mt-3 mb-4"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -201,42 +245,48 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
           </Card>
 
           {/* Resumen */}
-          <Card className="pt-4.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
-            <CardHeader>
-              <CardTitle>Resumen del Pedido</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {items.map((item) => (
-                  <div key={item.id} className="flex items-center space-x-4">
-                    <img
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.name}
-                      width={60}
-                      height={60}
-                      className="rounded-md object-cover"
-                    />
-                    <div className="flex-1">
-                      <h4 className="font-medium">{item.name}</h4>
-                      <p className="text-sm text-brown-500">
-                        {item.quantity} x ${item.price.toLocaleString()}
-                      </p>
-                    </div>
-                    <span className="font-semibold">
-                      ${(item.price * item.quantity).toLocaleString()}
-                    </span>
+            <Card className="pt-4.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
+              <CardHeader>
+                <CardTitle>Resumen del Pedido</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Contenedor con scroll solo para los productos */}
+                  <div className="max-h-64 overflow-y-auto pr-2 space-y-4 scrollbar-hidden">
+                    {items.map((item) => (
+                      <div key={item.id} className="flex items-center space-x-4">
+                        <img
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.name}
+                          width={60}
+                          height={60}
+                          className="rounded-md object-cover"
+                        />
+                        <div className="flex-1">
+                          <h4 className="font-medium">{item.name}</h4>
+                          <p className="text-sm text-brown-500">
+                            {item.quantity} x ${getItemPrice(item).toLocaleString()}{" "}
+                            {item.quantity >= 5 && (
+                              <span className="ml-1 text-green-600">(Mayorista -30%)</span>
+                            )}
+                          </p>
+                        </div>
+                        <span className="font-semibold">
+                          ${(getItemPrice(item) * item.quantity).toLocaleString()}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
 
-                <Separator />
+                  <Separator />
 
-                <div className="flex justify-between items-center text-2xl font-bold">
-                  <span>Total:</span>
-                  <span>${total.toLocaleString()}</span>
+                  <div className="flex justify-between items-center text-2xl font-bold">
+                    <span>Total:</span>
+                    <span>${total.toLocaleString()}</span>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
         </div>
       </div>
     </div>

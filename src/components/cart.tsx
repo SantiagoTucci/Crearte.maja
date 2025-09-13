@@ -2,8 +2,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { ShoppingCart, Plus, Minus, Trash2 } from "lucide-react"
+import { ShoppingCart, Plus, Minus, Trash2, Info } from "lucide-react"
 import { useCart } from "@/hooks/cart-context"
 
 interface CartProps {
@@ -11,7 +10,7 @@ interface CartProps {
 }
 
 export function Cart({ onCheckout }: CartProps) {
-  const { items, updateQuantity, removeItem, getTotal, isOpen, toggleCart } = useCart()
+  const { items, updateQuantity, removeItem, isOpen, toggleCart } = useCart()
   const [isLoading, setIsLoading] = useState(false)
 
   const handleCheckout = async () => {
@@ -25,7 +24,27 @@ export function Cart({ onCheckout }: CartProps) {
   }
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
-  const total = getTotal()
+
+  // 🔹 Calcular precio unitario con descuento si corresponde
+  const getItemPrice = (item: any) => {
+    if (item.quantity >= 5) {
+      return item.price * 0.7 // 30% descuento
+    }
+    return item.price
+  }
+
+  // 🔹 Total con descuentos aplicados
+  const total = items.reduce((sum, item) => {
+    return sum + getItemPrice(item) * item.quantity
+  }, 0)
+
+  // 🔹 Calcular ahorro total
+  const ahorro = items.reduce((sum, item) => {
+    if (item.quantity >= 5) {
+      return sum + (item.price - getItemPrice(item)) * item.quantity
+    }
+    return sum
+  }, 0)
 
   const getTypeColor = (type: string) => {
     const colors = {
@@ -60,8 +79,19 @@ export function Cart({ onCheckout }: CartProps) {
           </div>
         ) : (
           <div className="flex flex-col h-full px-3 py-4">
-            <ScrollArea className="flex-1 -mx-6 px-8">
-              <div className="space-y-4 py-2">
+            {/* 🔹 Mensaje informativo sobre el descuento */}
+            <div className="flex items-start gap-2 bg-green-50 border border-green-200 text-green-700 rounded-md p-3 mb-4 text-sm">
+              <Info className="h-4 w-4 mt-0.5" />
+              <p>
+                Llevando <span className="font-semibold">5 o más unidades iguales</span>, obtenés un{" "}
+                <span className="font-semibold">30% de descuento mayorista</span>.
+              </p>
+            </div>
+
+            {/* 🔹 Scroll oculto */}
+           <div className="flex-1 -mx-6 px-8 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] max-h-[400px]">
+  <div className="space-y-4 py-2">
+
                 {items.map((item) => (
                   <div key={item.id} className="flex items-center space-x-4 p-3 border rounded-lg border-brown-200">
                     <img
@@ -75,7 +105,13 @@ export function Cart({ onCheckout }: CartProps) {
                     <div className="flex-1 min-w-0">
                       <h4 className="font-medium truncate">{item.name}</h4>
                       <Badge className={`${getTypeColor(item.type)} rounded-full px-2 py-0.5 text-xs`}>{item.type}</Badge>
-                      <p className="font-semibold mt-1">${item.price.toLocaleString()}</p>
+
+                      <p className="font-semibold mt-1">
+                        ${getItemPrice(item).toLocaleString()}
+                        {item.quantity >= 5 && (
+                          <span className="ml-2 text-xs text-green-600 font-medium">(Mayorista -30%)</span>
+                        )}
+                      </p>
                     </div>
 
                     <div className="flex items-center space-x-2">
@@ -111,13 +147,19 @@ export function Cart({ onCheckout }: CartProps) {
                   </div>
                 ))}
               </div>
-            </ScrollArea>
+            </div>
 
             <div className="border-t border-gray-300 pt-4 space-y-4 px-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-semibold">Total:</span>
                 <span className="text-2xl font-bold text-brown-900">${total.toLocaleString()}</span>
               </div>
+
+              {ahorro > 0 && (
+                <p className="text-sm text-green-600 font-medium">
+                  Ahorraste ${ahorro.toLocaleString()} con precios mayoristas 🎉
+                </p>
+              )}
 
               <Button
                 className="w-full bg-gradient-to-r from-brown-500 to-sand-500 hover:from-brown-600 hover:to-sand-600 text-white cursor-pointer"
@@ -134,7 +176,11 @@ export function Cart({ onCheckout }: CartProps) {
                 )}
               </Button>
 
-              <Button variant="outline" className="w-full border border-gray-700 text-brown-900 hover:bg-brown-50 cursor-pointer" onClick={toggleCart}>
+              <Button
+                variant="outline"
+                className="w-full border border-gray-700 text-brown-900 hover:bg-brown-50 cursor-pointer"
+                onClick={toggleCart}
+              >
                 Continuar Comprando
               </Button>
             </div>

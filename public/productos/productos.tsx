@@ -241,3 +241,4 @@ export const sampleProducts: Product[] = [
     type: "aromática",
     image: "/MANGO.jpg"
   },
+]
