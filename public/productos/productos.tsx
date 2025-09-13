@@ -222,6 +222,6 @@ export const sampleProducts: Product[] = [
     description: "Mango y Maracuya...un poco de verano.",
     price: 9000,
     type: "aromática",
-    image: "/Vela Coco.jpg"
+    image: "/Vela Coco.jpeg"
   },
 ] 
