@@ -216,8 +216,7 @@ export const sampleProducts: Product[] = [
     price: 6500,
     type: "decorativa",
     image: "/alajero.jpg"
-  },
-]{
+  },{
     id: "30",
     name: "Vela Tenesse Mango",
     description: "Mango y Maracuya...un poco de verano.",
@@ -225,3 +224,4 @@ export const sampleProducts: Product[] = [
     type: "aromática",
     image: "/Vela Coco.jpg"
   },
+] 
