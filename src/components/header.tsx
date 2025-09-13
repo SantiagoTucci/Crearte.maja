@@ -45,7 +45,7 @@ export function Header() {
         </div>
       </div>
 
-      {/* {mobileMenuOpen && (
+      {mobileMenuOpen && (
         <div className="md:hidden border-t bg-white text-black/95">
           <nav className="container mx-auto px-4 py-4 space-y-2">
             <a href="inicio" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
@@ -59,7 +59,7 @@ export function Header() {
             </a>
           </nav>
         </div>
-      )} */}
+      )}
     </header>
   );
 }

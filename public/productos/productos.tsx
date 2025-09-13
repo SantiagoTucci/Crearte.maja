@@ -224,21 +224,5 @@ export const sampleProducts: Product[] = [
     price: 6500,
     type: "decorativa",
     image: "/alajero.jpg"
-  },
-  {
-    id: "30",
-    name: "Vela Tenesee con tapa",
-    description: "Aromas que susurran historias de frescura y encanto. Coco y Vainilla.",
-    price: 9000,
-    type: "aromática",
-    image: "/COCOYVAINILLA.jpg"
-  },
-  {
-    id: "31",
-    name: "Vela Tenesse con tapa",
-    description: "Un aroma que enciende la pasión....Mango y Maracuya.",
-    price: 9000,
-    type: "aromática",
-    image: "/MANGO.jpg"
-  },
+  }
 ]
