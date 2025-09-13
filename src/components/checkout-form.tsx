@@ -245,7 +245,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
           </Card>
 
           {/* Resumen */}
-            <Card className="py-3 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
+            <Card className="py-3.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
               <CardHeader>
                 <CardTitle>Resumen del Pedido</CardTitle>
               </CardHeader>
