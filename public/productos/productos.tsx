@@ -5,7 +5,7 @@ export const sampleProducts: Product[] = [
     id: "1",
     name: "Vela Tenesse Mango",
     description: "Mango y Maracuya...un poco de verano.",
-    price: 8000,
+    price: 9000,
     type: "aromática",
     image: "/Vela Mango.jpeg"
   },
@@ -13,7 +13,7 @@ export const sampleProducts: Product[] = [
     id: "2",
     name: "Vela Tenesse Vainilla",
     description: "Un abrazo suave de Vainilla y Coco, aroma dulce para tu hogar.",
-    price: 8000,
+    price: 9000,
     type: "aromática",
     image: "/Vela Coco.jpeg"
   },
