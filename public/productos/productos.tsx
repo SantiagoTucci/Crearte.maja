@@ -2,20 +2,20 @@ import { Product } from "@/types/product"
 
 export const sampleProducts: Product[] = [
   {
-    id: "31",
-    name: "Vela Rosa",
-    description: "Aroma mango y maracuyá.",
-    price: 4500,
+    id: "1",
+    name: "Vela Tenesse Mango",
+    description: "Mango y Maracuya...un poco de verano.",
+    price: 8000,
     type: "aromática",
-    image: "/velaFlor.png"
+    image: "/Vela Mango.jpeg"
   },
   {
-    id: "30",
-    name: "Vela Dalia",
-    description: "Flor decorativa para hogar.",
-    price: 3500,
-    type: "decorativa",
-    image: "/VelaPuntitos.png"
+    id: "2",
+    name: "Vela Tenesse Vainilla",
+    description: "Un abrazo suave de Vainilla y Coco, aroma dulce para tu hogar.",
+    price: 8000,
+    type: "aromática",
+    image: "/Vela Coco.jpeg"
   },
   {
     id: "3",
@@ -217,18 +217,18 @@ export const sampleProducts: Product[] = [
     type: "decorativa",
     image: "/alajero.jpg"
   },{
-    id: "2",
-    name: "Vela Tenesse Mango",
-    description: "Mango y Maracuya...un poco de verano.",
-    price: 8000,
+    id: "30",
+    name: "Vela Rosa",
+    description: "Aroma mango y maracuyá.",
+    price: 4500,
     type: "aromática",
-    image: "/Vela Mango.jpeg"
+    image: "/velaFlor.png" 
   },{
-    id: "1",
-    name: "Vela Tenesse Vainilla",
-    description: "Un abrazo suave de Vainilla y Coco, aroma dulce para tu hogar.",
-    price: 8000,
-    type: "aromática",
-    image: "/Vela Coco.jpeg"
+    id: "31",
+   name: "Vela Dalia",
+    description: "Flor decorativa para hogar.",
+    price: 3500,
+    type: "decorativa",
+    image: "/VelaPuntitos.png" 
   },
 ] 
