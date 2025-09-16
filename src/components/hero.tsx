@@ -85,7 +85,7 @@ export function Hero({ products }: HeroProps) {
         </h1>
 
         <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl mx-auto leading-relaxed font-light text-sand-200 dark:text-sand-300 animate-fade-in-up">
-          Ilumina tu hogar con la calidez de nuestras velas artesanales hechas con amor y dedicación.
+          Ilumina tu hogar con la calidez de nuestras velas y adornos artesanales.
         </p>
       </div>
 
