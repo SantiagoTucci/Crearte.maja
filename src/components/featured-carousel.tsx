@@ -46,18 +46,18 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
     <div className="relative max-w-6xl mx-auto">
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-white border border-gray-600 rounded-full p-3 hover:bg-gray-200 transition-all duration-200 shadow-lg"
+        className="absolute left-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-white border border-sand-300 rounded-full p-3 hover:bg-gray-200 transition-all duration-200 shadow-lg"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="h-5 w-5 text-gray-600" />
+        <ChevronLeft className="h-5 w-5 text-sand-600" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-white border border-gray-600 rounded-full p-3 hover:bg-gray-200 transition-all duration-200 shadow-lg"
+        className="absolute right-4 top-1/3 md:top-1/2 cursor-pointer -translate-y-1/2 z-20 bg-white border border-sand-300 rounded-full p-3 hover:bg-gray-200 transition-all duration-200 shadow-lg"
         aria-label="Next slide"
       >
-        <ChevronRight className="h-5 w-5 text-gray-600" />
+        <ChevronRight className="h-5 w-5 text-sand-600" />
       </button>
 
       <div className="overflow-hidden rounded-xl">
@@ -73,7 +73,7 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <Card className="mx-4 md:mx-8 overflow-hidden bg-white border border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <Card className="mx-4 md:mx-8 overflow-hidden bg-white border border-sand-300 shadow-sm hover:shadow-md transition-shadow duration-300">
                   <div className="grid md:grid-cols-2 gap-0">
                     <div className="relative overflow-hidden bg-muted/30">
                       <img
@@ -85,7 +85,7 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
 
                     <CardContent className="p-3 md:px-8 md:p-5 flex flex-col justify-center space-y-3 md:space-y-5">
                       <div className="space-y-2 md:space-y-5">
-                        <h3 className="text-2xl md:text-3xl font-semibold text-card-foreground leading-tight text-balance">
+                        <h3 className="text-2xl md:text-3xl font-semibold text-sand-800 leading-tight text-balance">
                           {product.name}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed text-pretty">{product.description}</p>
@@ -97,7 +97,7 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
                         </span>
                         <Badge
                           variant="secondary"
-                          className="bg-secondary/10 text-secondary-foreground border-secondary/20"
+                          className="rounded-full px-3 py-1 text-xs font-medium shadow-lg backdrop-blur-sm"
                         >
                           {product.type}
                         </Badge>

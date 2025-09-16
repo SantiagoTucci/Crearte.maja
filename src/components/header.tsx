@@ -46,12 +46,12 @@ export function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-white text-black/95">
-          <nav className="container mx-auto px-4 py-4 space-y-2">
-            <a href="inicio" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+        <div className="md:hidden border-t bg-white text-sand-800">
+          <nav className="container mx-auto px-4 py-3 space-y-2">
+            <a href="inicio" className="block py-1.5 text-sm font-medium hover:text-primary transition-colors">
               Inicio
             </a>
-            <a href="nosotros" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+            <a href="nosotros" className="block py-1.5 text-sm font-medium hover:text-primary transition-colors">
               Sobre Nosotros
             </a>
             {/* <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">

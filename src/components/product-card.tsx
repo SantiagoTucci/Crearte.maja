@@ -44,14 +44,14 @@ export function ProductCard({ product }: ProductCardProps) {
         />
 
         <Badge
-          className={`absolute top-3 left-3 ${getTypeColor(product.type)} rounded-full px-3 py-1 text-xs font-medium shadow-lg backdrop-blur-sm`}
+          className={`absolute top-3 left-3 ${getTypeColor(product.type)} rounded-full px-3 py-1 text-xs text-sand-700 font-medium shadow-lg backdrop-blur-sm`}
         >
           {product.type}
         </Badge>
       </div>
 
       <CardContent className="px-4 py-0.5 flex-grow">
-        <h3 className="font-semibold text-lg sm:text-xl mb-1.5 line-clamp-2 text-brown-900 leading-tight">
+        <h3 className="font-semibold text-lg sm:text-xl mb-1.5 line-clamp-2 text-brown-800 leading-tight">
           {product.name}
         </h3>
         <p className="text-sm mb-1.5 line-clamp-3 leading-relaxed text-brown-700">{product.description}</p>
