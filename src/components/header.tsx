@@ -54,9 +54,9 @@ export function Header() {
             <a href="nosotros" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
               Sobre Nosotros
             </a>
-            <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+            {/* <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
               Contacto
-            </a>
+            </a> */}
           </nav>
         </div>
       )}
