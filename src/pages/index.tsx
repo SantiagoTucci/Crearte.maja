@@ -6,11 +6,8 @@ import { Cart } from "@/components/cart"
 import { CheckoutForm } from "@/components/checkout-form"
 import { Header } from "@/components/header"
 import { CartProvider } from "@/hooks/cart-context"
-import { ThemeProvider } from "next-themes"
-import { Product } from "@/types/product"
+import type { Product } from "@/types/product"
 import { sampleProducts } from "../../public/productos/productos"
-import { FeaturedCarousel } from "@/components/featured-carousel"
-import React from "react"
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
@@ -22,12 +19,12 @@ export default function Home() {
   useEffect(() => {
     const loadProducts = async () => {
       // Simular delay de carga
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       setProducts(sampleProducts)
       setFilteredProducts(sampleProducts)
       setLoading(false)
     }
-    
+
     loadProducts()
   }, [])
 
@@ -36,45 +33,124 @@ export default function Home() {
     if (selectedTypes.length === 0) {
       setFilteredProducts(products)
     } else {
-      setFilteredProducts(products.filter(product => 
-        selectedTypes.includes(product.type)
-      ))
+      setFilteredProducts(products.filter((product) => selectedTypes.includes(product.type)))
     }
   }, [products, selectedTypes])
 
   // Obtener tipos únicos
-  const availableTypes = [...new Set(products.map(product => product.type))]
+  const availableTypes = [...new Set(products.map((product) => product.type))]
 
   if (showCheckout) {
     return (
-        <CartProvider>
-          <div className="min-h-screen">
-            <Header />
-            <CheckoutForm onBack={() => setShowCheckout(false)} />
-          </div>
-        </CartProvider>
+      <CartProvider>
+        <div className="min-h-screen">
+          <Header />
+          <CheckoutForm onBack={() => setShowCheckout(false)} />
+        </div>
+      </CartProvider>
     )
   }
 
   return (
-      <CartProvider>
-        <div className="min-h-screen">
-          <Header />
+    <CartProvider>
+      <div className="min-h-screen">
+        <Header />
 
-          <Hero products={products} />
+        <Hero products={products} />
 
-          <main className="container mx-auto px-4 py-12 sm:py-16 bg-white">
-            <div className="mb-8">
-              <h2 className="text-3xl sm:text-4xl font-semibold text-center sm:mb-4 gradient-text">Nuestra Colección</h2>
+        <main className="container mx-auto px-4 py-12 sm:py-14 bg-white">
+          <div className="mb-8">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-center sm:mb-4 gradient-text">
+              Nuestra Colección
+            </h2>
+
+          
+          </div>
+
+          <FilterBar
+            types={availableTypes}
+            selectedTypes={selectedTypes}
+            onTypeChange={setSelectedTypes}
+          />
+
+          <ProductList products={filteredProducts} loading={loading} />
+        </main>
+
+        <Cart onCheckout={() => setShowCheckout(true)} />
+
+        <section className="bg-gradient-to-br from-sand-100 to-sand-200 py-8 sm:py-10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-sand-800 mb-6 animate-fade-in">
+                Experiencia Premium
+              </h2>
+              <p className="text-lg text-sand-600 leading-relaxed animate-fade-in-delay-1">
+                Descubre la perfecta combinación entre calidad artesanal y diseño contemporáneo. Cada pieza cuenta una
+                historia única.
+              </p>
             </div>
 
-            <FilterBar types={availableTypes} selectedTypes={selectedTypes} onTypeChange={setSelectedTypes} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in-delay-2">
+                <div className="w-12 h-12 bg-sand-600 rounded-xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-sand-800 mb-3">Calidad Excepcional</h3>
+                <p className="text-sand-600 leading-relaxed">
+                  Materiales cuidadosamente seleccionados y procesos artesanales que garantizan durabilidad y belleza.
+                </p>
+              </div>
 
-            <ProductList products={filteredProducts} loading={loading} />
-          </main>
+              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in-delay-3">
+                <div className="w-12 h-12 bg-sand-600 rounded-xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-sand-800 mb-3">Diseño Atemporal</h3>
+                <p className="text-sand-600 leading-relaxed">
+                  Creaciones que trascienden las tendencias, diseñadas para acompañarte durante años.
+                </p>
+              </div>
 
-          <Cart onCheckout={() => setShowCheckout(true)} />
-        </div>
-      </CartProvider>
+              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in-delay-4">
+                <div className="w-12 h-12 bg-sand-600 rounded-xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-sand-800 mb-3">Entrega Rápida</h3>
+                <p className="text-sand-600 leading-relaxed">
+                  Envíos seguros y eficientes para que disfrutes de tus productos lo antes posible.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center animate-fade-in-delay-5">
+              <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-sm rounded-full px-8 py-4 shadow-sm">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 bg-sand-400 rounded-full border-2 border-white"></div>
+                  <div className="w-8 h-8 bg-sand-500 rounded-full border-2 border-white"></div>
+                  <div className="w-8 h-8 bg-sand-600 rounded-full border-2 border-white"></div>
+                </div>
+                <span className="text-sand-700 font-medium">+30 clientes satisfechos</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </CartProvider>
   )
 }
