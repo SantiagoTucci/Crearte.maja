@@ -80,11 +80,11 @@ export function Hero({ products }: HeroProps) {
         }`}
       >
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-sand-300 to-sand-400 bg-clip-text text-transparent animate-fade-in">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight bg-gradient-to-r from-sand-300 to-sand-400 bg-clip-text text-transparent animate-fade-in">
           Conoce nuestros productos
         </h1>
 
-        <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl mx-auto leading-relaxed font-light text-sand-200 dark:text-sand-300 animate-fade-in-up">
+        <p className="text-lg md:text-2xl lg:text-3xl mb-6 max-w-4xl mx-auto leading-relaxed font-light text-sand-200 dark:text-sand-300 animate-fade-in-up">
           Ilumina tu hogar con la calidez de nuestras velas y adornos artesanales.
         </p>
       </div>

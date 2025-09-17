@@ -97,7 +97,7 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
                         </span>
                         <Badge
                           variant="secondary"
-                          className="rounded-full px-3 py-1 text-xs font-medium shadow-lg backdrop-blur-sm"
+                          className="rounded-full px-3 py-1 text-xs text-sand-300 font-medium shadow-lg backdrop-blur-sm bg-brown-100 dark:bg-brown-900/30 dark:text-brown-100"
                         >
                           {product.type}
                         </Badge>
