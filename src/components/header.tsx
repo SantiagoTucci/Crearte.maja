@@ -14,13 +14,10 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-white text-black/95 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-semibold gradient-text">Crearte.Maja</h1>
+          <a href="inicio" className="text-xl font-semibold gradient-text">Crearte.Maja</a>
         </div>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="inicio" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-            Inicio
-          </a>
           <a href="nosotros" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Nosotros
           </a>
@@ -48,11 +45,8 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-white text-sand-800">
           <nav className="container mx-auto px-4 py-3 space-y-2">
-            <a href="inicio" className="block py-1.5 text-sm font-medium hover:text-primary transition-colors">
-              Inicio
-            </a>
             <a href="nosotros" className="block py-1.5 text-sm font-medium hover:text-primary transition-colors">
-              Sobre Nosotros
+              Nosotros
             </a>
             {/* <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
               Contacto
