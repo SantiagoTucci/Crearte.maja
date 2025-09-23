@@ -109,12 +109,12 @@ export function Cart({ onCheckout }: CartProps) {
                       <p className="font-semibold mt-1">
                         ${getItemPrice(item).toLocaleString()}
                         {item.quantity >= 5 && (
-                          <span className="ml-2 text-xs text-green-600 font-medium">(Mayorista -30%)</span>
+                          <span className="ml-2 text-xs text-green-600 font-medium">(-30%)</span>
                         )}
                       </p>
                     </div>
 
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1">
                       <Button
                         variant="outline"
                         size="icon"
