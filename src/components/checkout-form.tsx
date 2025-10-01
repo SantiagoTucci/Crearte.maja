@@ -44,6 +44,10 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
     return sum
   }, 0)
 
+  // 🔹 Formatear precio en ARS
+  const formatPrice = (amount: number) =>
+    new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", minimumFractionDigits: 0 }).format(amount)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -63,12 +67,12 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
         items: items
           .map(
             (i) =>
-              `${i.name} x${i.quantity} - $${getItemPrice(i).toLocaleString()} ${
+              `${i.name} x${i.quantity} - ${formatPrice(getItemPrice(i))} ${
                 i.quantity >= 5 ? "(Mayorista -30%)" : ""
               }`
           )
           .join(", "),
-        total: total.toFixed(2),
+        total: formatPrice(total),
       }
 
       await emailjs.send(
@@ -140,7 +144,6 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Campos */}
                 {/* Nombre */}
                 <div>
                   <Label htmlFor="name" className="text-brown-900">
@@ -245,48 +248,54 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
           </Card>
 
           {/* Resumen */}
-            <Card className="py-3.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
-              <CardHeader>
-                <CardTitle>Resumen del Pedido</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {/* Contenedor con scroll solo para los productos */}
-                  <div className="max-h-64 overflow-y-auto pr-2 space-y-3 scrollbar-hidden">
-                    {items.map((item) => (
-                      <div key={item.id} className="flex items-center space-x-4">
-                        <img
-                          src={item.image || "/placeholder.svg"}
-                          alt={item.name}
-                          width={60}
-                          height={60}
-                          className="rounded-md object-cover"
-                        />
-                        <div className="flex-1">
-                          <h4 className="font-medium">{item.name}</h4>
-                          <p className="text-sm text-brown-500">
-                            {item.quantity} x ${getItemPrice(item).toLocaleString()}{" "}
-                            {item.quantity >= 5 && (
-                              <span className="ml-1 text-green-600">(-30%)</span>
-                            )}
-                          </p>
-                        </div>
-                        <span className="font-semibold">
-                          ${(getItemPrice(item) * item.quantity).toLocaleString()}
-                        </span>
+          <Card className="py-3.5 border border-brown-200 shadow-xl bg-white/80 text-brown-900">
+            <CardHeader>
+              <CardTitle>Resumen del Pedido</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                {/* Contenedor con scroll solo para los productos */}
+                <div className="max-h-64 overflow-y-auto pr-2 space-y-3 scrollbar-hidden">
+                  {items.map((item) => (
+                    <div key={item.id} className="flex items-center space-x-4">
+                      <img
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.name}
+                        width={60}
+                        height={60}
+                        className="rounded-md object-cover"
+                      />
+                      <div className="flex-1">
+                        <h4 className="font-medium">{item.name}</h4>
+                        <p className="text-sm text-brown-500">
+                          {item.quantity} x {formatPrice(getItemPrice(item))}{" "}
+                          {item.quantity >= 5 && (
+                            <span className="ml-1 text-green-600">(-30%)</span>
+                          )}
+                        </p>
                       </div>
-                    ))}
-                  </div>
-
-                  <Separator />
-
-                  <div className="flex justify-between items-center text-2xl font-bold ">
-                    <span>Total:</span>
-                    <span>${total.toLocaleString()}</span>
-                  </div>
+                      <span className="font-semibold">
+                        {formatPrice(getItemPrice(item) * item.quantity)}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              </CardContent>
-            </Card>
+
+                <Separator />
+
+                <div className="flex justify-between items-center text-2xl font-bold ">
+                  <span>Total:</span>
+                  <span>{formatPrice(total)}</span>
+                </div>
+
+                {ahorro > 0 && (
+                  <p className="text-sm text-green-600 font-medium">
+                    Ahorraste {formatPrice(ahorro)} con precios mayoristas 🎉
+                  </p>
+                )}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

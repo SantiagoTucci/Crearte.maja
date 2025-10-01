@@ -56,7 +56,12 @@ export function ProductCard({ product }: ProductCardProps) {
         </h3>
         <p className="text-sm mb-1.5 line-clamp-3 leading-relaxed text-brown-700">{product.description}</p>
         <div className="flex items-center justify-between mt-auto">
-          <span className="text-xl sm:text-3xl font-bold">${product.price.toLocaleString()}</span>
+          <span className="text-xl sm:text-3xl font-bold">  {new Intl.NumberFormat("es-AR", {
+              style: "currency",
+              currency: "ARS",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            }).format(product.price)}</span>
         </div>
       </CardContent>
 

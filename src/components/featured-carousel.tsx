@@ -93,7 +93,12 @@ export function FeaturedCarousel({ products }: FeaturedCarouselProps) {
 
                       <div className="flex items-center justify-between">
                         <span className="text-3xl md:text-4xl font-bold text-primary">
-                          ${product.price.toLocaleString()}
+                            {new Intl.NumberFormat("es-AR", {
+                              style: "currency",
+                              currency: "ARS",
+                              minimumFractionDigits: 0,
+                              maximumFractionDigits: 0,
+                            }).format(product.price)}
                         </span>
                         <Badge
                           variant="secondary"

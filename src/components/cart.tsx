@@ -25,7 +25,6 @@ export function Cart({ onCheckout }: CartProps) {
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
 
-  // 🔹 Calcular precio unitario con descuento si corresponde
   const getItemPrice = (item: any) => {
     if (item.quantity >= 5) {
       return item.price * 0.7 // 30% descuento
@@ -33,18 +32,19 @@ export function Cart({ onCheckout }: CartProps) {
     return item.price
   }
 
-  // 🔹 Total con descuentos aplicados
   const total = items.reduce((sum, item) => {
     return sum + getItemPrice(item) * item.quantity
   }, 0)
 
-  // 🔹 Calcular ahorro total
   const ahorro = items.reduce((sum, item) => {
     if (item.quantity >= 5) {
       return sum + (item.price - getItemPrice(item)) * item.quantity
     }
     return sum
   }, 0)
+
+  const formatPrice = (amount: number) =>
+    new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", minimumFractionDigits: 0 }).format(amount)
 
   const getTypeColor = (type: string) => {
     const colors = {
@@ -79,7 +79,6 @@ export function Cart({ onCheckout }: CartProps) {
           </div>
         ) : (
           <div className="flex flex-col h-full px-3 py-4">
-            {/* 🔹 Mensaje informativo sobre el descuento */}
             <div className="flex items-start gap-2 bg-green-50 border border-green-200 text-green-700 rounded-md p-3 mb-4 text-sm">
               <Info className="h-4 w-4 mt-0.5" />
               <p>
@@ -88,10 +87,8 @@ export function Cart({ onCheckout }: CartProps) {
               </p>
             </div>
 
-            {/* 🔹 Scroll oculto */}
-           <div className="flex-1 -mx-6 px-8 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] max-h-[400px]">
-  <div className="space-y-4 py-2">
-
+            <div className="flex-1 -mx-6 px-8 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] max-h-[400px]">
+              <div className="space-y-4 py-2">
                 {items.map((item) => (
                   <div key={item.id} className="flex items-center space-x-4 p-3 border rounded-lg border-brown-200">
                     <img
@@ -107,7 +104,7 @@ export function Cart({ onCheckout }: CartProps) {
                       <Badge className={`${getTypeColor(item.type)} rounded-full px-2 py-0.5 text-xs`}>{item.type}</Badge>
 
                       <p className="font-semibold mt-1">
-                        ${getItemPrice(item).toLocaleString()}
+                        {formatPrice(getItemPrice(item))}
                         {item.quantity >= 5 && (
                           <span className="ml-2 text-xs text-green-600 font-medium">(-30%)</span>
                         )}
@@ -152,12 +149,12 @@ export function Cart({ onCheckout }: CartProps) {
             <div className="border-t border-gray-300 pt-4 space-y-4 px-6">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold text-brown-900">${total.toLocaleString()}</span>
+                <span className="text-2xl font-bold text-brown-900">{formatPrice(total)}</span>
               </div>
 
               {ahorro > 0 && (
                 <p className="text-sm text-green-600 font-medium">
-                  Ahorraste ${ahorro.toLocaleString()} con precios mayoristas 🎉
+                  Ahorraste {formatPrice(ahorro)} con precios mayoristas 🎉
                 </p>
               )}
 
