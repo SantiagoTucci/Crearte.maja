@@ -21,9 +21,9 @@ export function Header() {
           <a href="nosotros" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Nosotros
           </a>
-          {/* <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+          <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
             Contacto
-          </a> */}
+          </a>
         </nav>
 
         <div className="flex items-center space-x-4">
@@ -48,9 +48,9 @@ export function Header() {
             <a href="nosotros" className="block py-1.5 text-sm font-medium hover:text-primary transition-colors">
               Nosotros
             </a>
-            {/* <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+           <a href="contacto" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
               Contacto
-            </a> */}
+            </a>
           </nav>
         </div>
       )}

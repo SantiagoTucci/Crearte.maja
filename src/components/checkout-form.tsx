@@ -250,9 +250,9 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                 <CardTitle>Resumen del Pedido</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-2">
                   {/* Contenedor con scroll solo para los productos */}
-                  <div className="max-h-64 overflow-y-auto pr-2 space-y-4 scrollbar-hidden">
+                  <div className="max-h-64 overflow-y-auto pr-2 space-y-3 scrollbar-hidden">
                     {items.map((item) => (
                       <div key={item.id} className="flex items-center space-x-4">
                         <img
@@ -267,7 +267,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
                           <p className="text-sm text-brown-500">
                             {item.quantity} x ${getItemPrice(item).toLocaleString()}{" "}
                             {item.quantity >= 5 && (
-                              <span className="ml-1 text-green-600">(Mayorista -30%)</span>
+                              <span className="ml-1 text-green-600">(-30%)</span>
                             )}
                           </p>
                         </div>
@@ -280,7 +280,7 @@ export function CheckoutForm({ onBack }: CheckoutFormProps) {
 
                   <Separator />
 
-                  <div className="flex justify-between items-center text-2xl font-bold">
+                  <div className="flex justify-between items-center text-2xl font-bold ">
                     <span>Total:</span>
                     <span>${total.toLocaleString()}</span>
                   </div>

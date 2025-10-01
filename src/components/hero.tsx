@@ -80,7 +80,7 @@ export function Hero({ products }: HeroProps) {
         }`}
       >
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight bg-gradient-to-r from-sand-300 to-sand-400 bg-clip-text text-transparent animate-fade-in">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight bg-gradient-to-r from-sand-50 to-sand-100 bg-clip-text text-transparent animate-fade-in">
           Conoce nuestros productos
         </h1>
 
