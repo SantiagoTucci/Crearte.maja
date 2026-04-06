@@ -240,4 +240,11 @@ export const sampleProducts: Product[] = [
     price: 6500,
     type: "Souvenir",
     image: "/souvenirflorabierta.jpeg"  
+   },{
+     id: "33",
+    name: "Souvenir rosa",
+    description: "Vela vaso imperial, flor rosa, colores y fragancia a elección.",
+    price: 6500,
+    type: "Souvenir",
+    image: "/SOUVENIR ROSA.jpeg"  
    },
