@@ -216,19 +216,29 @@ export const sampleProducts: Product[] = [
     price: 6500,
     type: "decorativa",
     image: "/alajero.jpg"
-  },{
+  },
+  {
     id: "30",
     name: "Vela Rosa",
     description: "Aroma mango y maracuyá.",
     price: 4500,
     type: "aromática",
     image: "/velaFlor.png" 
-  },{
+  },
+  {
     id: "31",
    name: "Vela Dalia",
     description: "Flor decorativa para hogar.",
     price: 3500,
     type: "decorativa",
     image: "/VelaPuntitos.png" 
+  },
+  {
+    id: "32",
+   name: "Souvenir flor abierta",
+    description: "Vela souvenir flor abierta, colores a elección.",
+    price: 6500,
+    type: "Souvenir",
+    image: "/souvenirflorabierta.jpeg" 
   },
 ] 
