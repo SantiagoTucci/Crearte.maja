@@ -234,11 +234,10 @@ export const sampleProducts: Product[] = [
     image: "/VelaPuntitos.png" 
   },
   {
-    id: "32",
-   name: "Souvenir flor abierta",
-    description: "Vela souvenir flor abierta, colores a elección.",
+     id: "32",
+    name: "Souvenir flor abierta",
+    description: "Vela vaso imperial, flor abierta, colores y fragancia a elección.",
     price: 6500,
     type: "Souvenir",
-    image: "/souvenirflorabierta.jpeg" 
-  },
-] 
+    image: "/souvenirflorabierta.jpeg"  
+   },
